@@ -1,0 +1,34 @@
+<div class="NewContents">
+  <div class="Container">
+    <%= form_with(model: @post, local: true, class:"Form") do |form| %>
+      <h3 class='NewContentsMessage'>exit
+        投稿する
+      </h3>
+      <ul class='FormSpace'>
+        <%# <li class="PrefectureSelect"> %>
+          <%# <label for="prefucture">Prefecture：</label> %>
+          <%# <%= form.collection_select :prefucture_id, Prefecture.all, :id, :areaname %> %>
+        <%# </li> %>
+        <%# <li class="CategorySelect"> %>
+          <%# <label for="category">Category：</label> %>
+          <%# <%= form.collection_select :category_id, Category.all, :id, :name %>
+        <%# </li> %>
+        <li class="title">
+          <label for="titleSpace">Tilte：</label>
+          <%= form.text_field :title, class: 'titles', placeholder: "Title" %>
+        </li>
+        <li class='image'>
+          <label for="imageSpace">Photo：</label>
+          <%= form.text_field :image, class: 'images', placeholder: "Image url" %>
+        </li>
+        <li class='content'>
+          <label for="contentSpace">Content：</label>
+          <%= form.text_area :content, class: 'contents', placeholder: "コメントを入力してください" %>
+        </li>
+        <li class='send'>
+          <%= form.submit "SEND", class: 'sendBtn', value: "投稿" %>
+        </li>
+      </ul>
+    <% end %>
+  </div>
+</div>
