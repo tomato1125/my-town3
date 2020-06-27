@@ -1,24 +1,102 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## usersテーブル
 
-Things you may want to cover:
+|column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|image|string|
+|email|string|null: false|
+|password|string|null: false|
 
-* Ruby version
+### Association
+- has_many :likes
+- has_many :posts
+- has_many :prefectures, through :user_prefectures
 
-* System dependencies
+## user_prefecturesテーブル
 
-* Configuration
+|column|Type|Options|
+|------|----|-------|
+|user|references|null: false, foreign_key: true|
+|prefecture|references|null: false, foreign_key: true|
 
-* Database creation
+### Association
+- belongs_to :user
+- belongs_to :prefecture
 
-* Database initialization
+## prefecturesテーブル
 
-* How to run the test suite
+|column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
 
-* Services (job queues, cache servers, search engines, etc.)
+### Association
+- has_many :cities
+- has_many :users, through :users_prefectures
+- has_many :posts
 
-* Deployment instructions
+## citiesテーブル
 
+|column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+
+### Association
+- has_many :posts
+- belongs_to :prefecture
+
+## categoryテーブル
+
+|column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+
+### Association
+- has_many :posts
+
+
+## postsテーブル
+
+|column|Type|Options|
+|------|----|-------|
+|title|string|null: false|
+|content|text|null: false|
+|image|text|null: false|
+|category|references|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+|prefecture|references|null: false, foreign_key: true|
+|city|references|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user
+- belongs_to :prefecture
+- belongs_to :city
+- belongs_to :category
+- has_many :like
+
+## commentsテーブル
+
+|column|Type|Options|
+|------|----|-------|
+|content|text|
+|user|references|null: false, foreign_key: true|
+|post|references|null: false, foreign_key: true|
+|prefecture|references|null: false, foreign_key: true|
+|city|references|null: false, foreign_key: true|
+
+### Association
+- belongs_to :user
+- belongs_to :post
+
+## likesテーブル
+
+|column|Type|Options|
+|------|----|-------|
+|user|references|null: false, foreign_key: true|
+|posts|references|null: false, foreign_key: true, dependent: :destroy|
+
+### Association
+- belongs_to :user
+- belongs_to :post
 * ...

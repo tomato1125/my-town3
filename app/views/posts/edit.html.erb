@@ -1,0 +1,26 @@
+<div class="NewContents">
+  <div class="Container">
+    <%= form_with url: edit_post_path, local: true do |form| %>
+      <h3 class='NewContentsMessage'>
+        編集する
+      </h3>
+      <ul class='FormSpace'>
+        <li class="title">
+          <label for="title">Tilte</label>
+          <%= form.text_field :title, placeholder: "Nickname" %>
+        </li>
+        <li class='image'>
+          <label for="image">Photo</label>
+          <%= form.text_field :image, placeholder: "Image Url" %>
+        </li>
+        <li class='content'>
+          <label for="content">Content</label>
+          <%= form.text_area :content, placeholder: "コメントを入力してください" , rows: "10", class:"content" %>
+        </li>
+        <li>
+          <%= form.submit "SEND", value: "編集する" %>
+        </li>
+      </ul>
+    <% end %>
+  </div>
+</div>
