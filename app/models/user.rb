@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   has_many :posts, foreign_key: :user_id
   has_many :comments, foreign_key: :user_id
+  has_many :prefectures, foreign_key: :user_id
+  has_many :prefectures, through: :uers_prefectures
   # has_many :categories
   # has_many :categories, through :users_categories
 end
