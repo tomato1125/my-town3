@@ -2,6 +2,7 @@
   <div class='PostImage' style="background-image: url(<%= @post.image %>);">
     <% if user_signed_in? && current_user.id == @post.user.id %>
       <div class="more">
+        <%= @post.prefecture.name if @post.prefecture_id? %>
         <ul class="more_list">
           <li>
             <%= link_to '編集', edit_post_path(@post.id), method: :get %>

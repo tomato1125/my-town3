@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>MyTown2</title>
-
+ 
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -13,6 +13,7 @@
   <body>
     <header class="header">
       <div class="header__ber">
+        <p><img src="file:///Users/naokiyoshida/Downloads/My%20Town%20(1).jpg" alt="ロゴを表示" class='logo', ></p>
         <h1 class="grid-6"><a href="/">My town</a></h1>
         <% if user_signed_in? %>
           <div class="user_nav_logout">
