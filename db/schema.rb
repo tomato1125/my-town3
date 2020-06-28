@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_27_075807) do
+ActiveRecord::Schema.define(version: 2020_06_28_021524) do
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "post_id"
-    t.text "content"
+    t.text "comments"
+    t.bigint "user_id", null: false
+    t.bigint "post_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["post_id"], name: "index_comments_on_post_id"
@@ -26,10 +26,18 @@ ActiveRecord::Schema.define(version: 2020_06_27_075807) do
     t.string "title"
     t.text "content"
     t.text "image"
+    t.bigint "user_id", null: false
+    t.bigint "prefecture_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "user_id", null: false
+    t.index ["prefecture_id"], name: "index_posts_on_prefecture_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
+  create_table "prefectures", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -45,5 +53,19 @@ ActiveRecord::Schema.define(version: 2020_06_27_075807) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "users_prefectures", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "prefecture_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["prefecture_id"], name: "index_users_prefectures_on_prefecture_id"
+    t.index ["user_id"], name: "index_users_prefectures_on_user_id"
+  end
+
+  add_foreign_key "comments", "posts"
+  add_foreign_key "comments", "users"
+  add_foreign_key "posts", "prefectures"
   add_foreign_key "posts", "users"
+  add_foreign_key "users_prefectures", "prefectures"
+  add_foreign_key "users_prefectures", "users"
 end
