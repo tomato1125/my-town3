@@ -3,6 +3,7 @@
 @import "bootstrap";
 @import "modules/index";
 @import "modules/new";
+@import "modules/toppage";
 @import "Flexslider";
 @import "font-awesome-sprockets";
 @import "font-awesome";
@@ -23,7 +24,7 @@
  */
 
 .header {
-  background-color: #000000;
+  background-color: #222222;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -33,6 +34,11 @@
     align-items: center;
     margin-left: 10px;
   }
+}
+
+.logo {
+  height: 500px;
+  width: 500px;
 }
 .grid-6 {
   font-size: 30px;
@@ -46,4 +52,9 @@
 
 .user_nav_login {
   font-size: 20px;
+}
+
+.icon {
+  color: #4682B4;
+  font-size: 25px;
 }

@@ -1,7 +1,8 @@
 .flex-container {
+  background-color: #222222;
   position: absolute;
   height: 70vh;
-  width: 100%;
+  width: 85%;
   display: -webkit-flex;
   /* Safari */
   display: flex;
@@ -16,7 +17,7 @@
 .flex-title {
   color: #f1f1f1;
   position: relative;
-  font-size: 6vw;
+  font-size: 5vw;
   margin: auto;
   text-align: center;
   transform: rotate(90deg);
