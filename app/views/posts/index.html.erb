@@ -57,6 +57,14 @@
       </div>
       <div class="PostTitle">
         <span>~ <%= post.title %> ~</span>
+      <span class='UserInfomation__username'>
+        <a href="/users/<%= post.user.id %>">
+          <%= post.user.name %>
+        </a>
+      </span>
+      <div class='UserInfomation__date'>
+        <span><%= time_ago_in_words(post.created_at) %>前</span>
+
       </div>
       <div class='PostImage' style="background-image: url(<%= post.image %>);">
         <div class="AreaInfomation">

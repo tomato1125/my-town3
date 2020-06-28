@@ -35,3 +35,4 @@ ja:
       x_seconds:
         one: 1秒
         other: ! '%{count}秒'
+
