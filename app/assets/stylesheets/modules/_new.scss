@@ -56,6 +56,24 @@
   width: 400px;
   padding: 10px 16px 8px;
   margin-top: 8px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #fff;
+  &__input {
+    border: 1px solid #ccc;
+    background-color: #fff;
+    border-radius: 5px;
+    line-height: 2.0;
+    font-size: 15px;
+    text-align: center;
+    color: #000000;
+  }
+}
+.prefectureWord {
+  color: #fff;
+}
+.imageSpace {
+  color: #ffffff;
 }
 
 .CategorySelect {
@@ -81,6 +99,7 @@
   border-radius: 5px;
   border: 1px solid #ccc;
   background-color: #fff;
+  color: #000000;
   line-height: 1.5;
   font-size: 15px;
   margin-left: 20px;
@@ -109,16 +128,17 @@
   width: 700px;
   padding: 10px 16px 8px;
   margin-top: 8px;
-}
-
-.contents {
-  height: 100px;
-  width: 700px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  background-color: #fff;
-  line-height: 1.5;
-  font-size: 15px;
+  &__input {
+    height: 100px;
+    width: 700px;
+    border-radius: 5px;
+    color: #000000;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    line-height: 1.5;
+    font-size: 15px;
+    margin-left: 0px;
+  }
 }
 
 .send {
