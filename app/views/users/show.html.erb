@@ -1,8 +1,18 @@
 <div class="contents row">
   <p><%= @name %>さんの投稿一覧</p>
   <% @posts.each do |post| %>
-    <div class="PostImage" style="background-image: url(<%= post.image %>);">
+    <div class="PostTitle">
+      <span>~ <%= post.title %> ~</span>
     </div>
+    <div class="PostImage" style="background-image: url(<%= post.image %>);">
+      <div class="AreaInfomation">
+        <div class="UserIcon">
+          <i class="fas fa-map-marker-alt"></i>
+        </div>
+        <div class="AreaName">
+          <%= post.prefecture.name if post.prefecture_id? %>
+        </div>
+      </div>
       <div class="more">
         <ul class="more_list">
           <li>

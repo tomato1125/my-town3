@@ -131,8 +131,8 @@
 }
 
 .PresentLocationSearch {
-  background-color: #B1F9D0;
-  height: 80px;
+  background-color: #4682B4;
+  height: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -255,5 +255,6 @@
   &__NumberOfView {
     color: #ffffff;
     font-size: 20px;
+    margin-left: 20px;
   }
 }
