@@ -64,8 +64,7 @@
             <i class="fas fa-map-marker-alt"></i>
           </div>
           <div class="AreaName">
-            県名
-            <%# <%= @post.prefecture.name if @post.prefecture_id? %>
+            <%= post.prefecture.name if post.prefecture_id? %>
           </div>
         </div>
         <div class="more">
