@@ -3,6 +3,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.includes(:user).order("created_at DESC")
+    @maps = Map.all
   end
 
   def new
@@ -35,7 +36,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:title, :image, :content, :prefecture_id, :name).merge(user_id: current_user.id)
+    params.require(:post).permit(:title, :image, :content, :prefecture_id, :map_id).merge(user_id: current_user.id)
   end
 
   def move_to_index
