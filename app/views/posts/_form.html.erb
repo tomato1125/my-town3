@@ -1,0 +1,47 @@
+<%= form_with(model: post, local: true, class:"form") do |form| %>
+  <div class='formArea'>
+    <div class='inputArea'>
+      <ul class='formSpace'>
+        <li class="PrefectureSelect">
+          <label class="labelName" for="prefecture">Prefecture：</label>
+          <%= form.collection_select( :prefecture_id, Prefecture.all, :id, :name, {include_blank: '選択してください'}, {class: "PrefectureSelect__input"}) %>
+        </li>
+        <%# <li class="CategorySelect">prompt: true %>
+          <%# <label for="category">Category：</label> %>
+          <%# <%= form.collection_select :category_id, Category.all, :id, :name %>
+        <%# </li> %>
+        <li class="title">
+          <label class="labelName" for="titleSpace">Title：</label>
+          <%= form.text_field :title, class: 'title__input', placeholder: "タイトルを入力してください" %>
+        </li>
+        <li class='image'>
+          <label class="labelName" for="imageSpace">Photo：</label>
+          <%= form.text_field :image, class: 'image__input', placeholder: "写真のURLを貼ってください" %>
+        </li>
+        <li class='content'>
+          <label class="labelName" for="contentSpace">Content：</label>
+          <%= form.text_area :content, class: 'content__input', placeholder: "コメントを入力してください" %>
+        </li>
+      </ul>
+      <div class="googleMap">
+        <div class="mapName">
+          Map
+        </div>
+        <div class="addressArea">
+          <label class="addressArea__label" for="addressLabel">場所を検索：</label>
+          <%= form.text_field( :address, id: "address", placeholder: "地名・住所を入力してください", class: "addressArea__input") %>
+          <input type="button" value="検索" onclick="codeAddress()" class="addressArea__btn">
+        </div>
+        <div class="localeArea">
+          <input type="hidden" name="map[address]" id="hidden_address" class="localeArea__hidden">
+          <label class="localeArea__label" for="localeLabel">地名を入力：</label>
+          <%= form.text_field :maptitle, placeholder: "登録する地名を入力してください", class: "localeArea__input" %>
+        </div>
+        <div id='map'>
+      </div>
+    </div>
+  </div>
+  <div class='send'>
+    <%= form.submit "SEND", class: 'send__btn', value: "投稿する" %>
+  </div>
+<% end %>

@@ -60,6 +60,6 @@ gem 'mini_magick'
 gem 'devise'
 gem 'pry-rails'
 gem 'jquery-rails'
-gem 'gmaps4rails'
 gem 'geocoder'
 gem 'seed-fu'
+
