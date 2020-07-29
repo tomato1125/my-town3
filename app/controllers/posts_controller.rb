@@ -3,7 +3,6 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.includes(:user).order("created_at DESC")
-    # @maps = Map.all
   end
 
   def new
