@@ -1,50 +1,9 @@
 <div class="NewContents", style="background-image: url(<%= asset_path "mytown.jpeg" %>);">
-<<<<<<< Updated upstream
-  <div class="Container">
-    <%= form_with(model: @post, local: true, class:"Form") do |form| %>
-      <h3 class='NewContentsMessage'>
-        投稿する
-      </h3>
-      <div class='FormArea'>
-        <ul class='FormSpace'>
-          <li class="PrefectureSelect">
-            <label class="prefuctureWord" for="prefecture">Prefecture：</label>
-            <%= form.collection_select( :prefecture_id, Prefecture.all, :id, :name, {include_blank: '選択してください'}, {class: "PrefectureSelect__input"}) %>
-          </li>
-          <%# <li class="CategorySelect">prompt: true %>
-            <%# <label for="category">Category：</label> %>
-            <%# <%= form.collection_select :category_id, Category.all, :id, :name %>
-          <%# </li> %>
-          <li class="title">
-            <label for="titleSpace">Title：</label>
-            <%= form.text_field :title, class: 'titles', placeholder: "タイトルを入力してください" %>
-          </li>
-          <li class='image'>
-            <label for="imageSpace">Photo：</label>
-            <%= form.text_field :image, class: 'images', placeholder: "写真のURLを貼ってください" %>
-          </li>
-          <li class='content'>
-            <label for="contentSpace">Content：</label>
-            <%= form.text_area :content, class: 'content__input', placeholder: "コメントを入力してください" %>
-          </li>
-          <li class='send'>
-            <%= form.submit "SEND", class: 'sendBtn', value: "投稿" %>
-            <img src="https://www.dropbox.com/s/qfu4871umzhlcfo/check_arrow_2.svg?dl=1" alt="">
-            <svg width="66px" height="66px">
-              <circle class="circle_2" stroke-position="outside" stroke-width="3" fill="none" cx="34" cy="33" r="29" stroke="#1ECD97">
-              </circle>
-            </svg>
-          </li>
-        </ul>
-      </div>
-    <% end %>
-=======
   <h3 class='NewContents__message'>
     New Post
   </h3>
   <div class="NewContents__container">
     <%= render 'form', post: @post %>
->>>>>>> Stashed changes
   </div>
 </div>
 <style>
