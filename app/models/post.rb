@@ -4,7 +4,7 @@ class Post < ApplicationRecord
   validates :image,presence: true
   validates :latitude, presence: true
   validates :longitude, presence: true
-  # validates :maptitle, presence: true
+  validates :maptitle, presence: true
 
   belongs_to :user
   belongs_to :prefecture

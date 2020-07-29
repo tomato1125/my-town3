@@ -22,15 +22,6 @@ ActiveRecord::Schema.define(version: 2020_07_29_011600) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
-  create_table "maps", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.text "address"
-    t.text "maptitle"
-    t.float "latitude"
-    t.float "longitude"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
     t.text "content"
