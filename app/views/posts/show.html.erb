@@ -11,7 +11,6 @@
           </div>
           <div class="AreaName">
             <%= @post.prefecture.name if @post.prefecture_id? %>
-            <%# <%= @post.prefecture.name if @post.prefecture_id? %>
           </div>
         </div>
         <div class="more">
@@ -36,10 +35,10 @@
     </div>
   </div>
   <div class='GoogleMapShow'>
-    <%= render partial: "gmap" %>
+    <%= render 'showmap', post: @post %>
   </div>
 </div>
-<div class="CommentSpace">
+<div class="commentSpace">
   <% if current_user %>
     <%= form_with(model: [@post, @comment], local: true, id: "new_comment") do |form| %>
       <%= form.text_area :content, placeholder: "コメントする", rows: "3", class: "contentbox"%>
@@ -60,5 +59,3 @@
     <% end %>
   <% end %>
 </div>
-
-<p class="nomalcontent">禁止されている</p><a class="link">行為</a><p class="nomalcontent">および</p><a class="link">出品物</a><p>を必ずご確認ください。</p>

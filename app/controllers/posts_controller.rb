@@ -35,7 +35,11 @@ class PostsController < ApplicationController
 
   private
   def post_params
+<<<<<<< Updated upstream
     params.require(:post).permit(:title, :image, :content, :prefecture_id, :name).merge(user_id: current_user.id)
+=======
+    params.require(:post).permit(:title, :image, :content, :prefecture_id, :address, :latitude, :longtitude, :maptitle).merge(user_id: current_user.id)
+>>>>>>> Stashed changes
   end
 
   def move_to_index
