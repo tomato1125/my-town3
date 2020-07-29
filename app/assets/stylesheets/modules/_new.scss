@@ -4,104 +4,9 @@
 
 
 .NewContents {
-<<<<<<< Updated upstream
   height: 100vh;
   width: 100%;
   display: flex;
-}
-
-.Container {
-  // background-color: #222222;
-  height: 100vh;
-  width: 100%;
-  color: #ffffff;
-  display: flex;
-}
-.Form {
-  height: 100vh;
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-}
-
-.NewContentsMessage {
-  display: block;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
-.NewContentsMessage {
-  font-weight: bold;
-  margin-top: 30px;
-  padding-top: 30px;
-  
-}
-
-.FormArea {
-  display: flex;
-}
-.FormSpace {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  height: 400px;
-}
-
-.TitleName {
-  margin-bottom: 10px;
-}
-
-.PrefectureSelect {
-  height: 20px;
-  width: 400px;
-  padding: 10px 16px 8px;
-  margin-top: 8px;
-}
-
-.CategorySelect {
-  height: 20px;
-  width: 400px;
-  padding: 10px 16px 8px;
-  margin-top: 8px;
-}
-
-.prespace {
-  color: #000000;
-}
-
-.title {
-  height: 20px;
-  width: 500px;
-  padding: 10px 16px 8px;
-  margin-top: 8px;
-}
-.titles {
-  height: 20px;
-  width: 300px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  background-color: #fff;
-  line-height: 1.5;
-  font-size: 15px;
-  margin-left: 20px;
-}
-
-.image {
-  height: 20px;
-  width: 400px;
-  padding: 10px 16px 8px;
-  margin-top: 8px;
-}
-.images {
-  height: 20px;
-  width: 300px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  background-color: #fff;
-  line-height: 1.5;
-  font-size: 15px;
-  margin-left: 10px;
 }
 
 .content {
@@ -120,7 +25,6 @@
   background-color: #fff;
   line-height: 1.5;
   font-size: 15px;
-=======
   &__message {
     color: #ffffff;
     display: flex;
@@ -130,6 +34,17 @@
     height: 50px;
     margin: 0;
     padding-top: 100px;
+  }
+  &__input {
+    height: 100px;
+    width: 700px;
+    border-radius: 5px;
+    color: #000000;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    line-height: 1.5;
+    font-size: 15px;
+    margin-left: 0px;
   }
 }
 
@@ -269,11 +184,4 @@
       font-weight: bold;
     }
   }
->>>>>>> Stashed changes
 }
-
-
-
-
-
-

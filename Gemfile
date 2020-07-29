@@ -60,9 +60,6 @@ gem 'mini_magick'
 gem 'devise'
 gem 'pry-rails'
 gem 'jquery-rails'
-<<<<<<< Updated upstream
-gem 'seed-fu'
-=======
 gem 'geocoder'
 gem 'seed-fu'
->>>>>>> Stashed changes
+

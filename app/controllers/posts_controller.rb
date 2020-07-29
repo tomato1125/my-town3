@@ -3,11 +3,11 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.includes(:user).order("created_at DESC")
+    # @maps = Map.all
   end
 
   def new
     @post = Post.new
-    @prefecture = Prefecture.all
   end
 
   def create
@@ -35,11 +35,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-<<<<<<< Updated upstream
-    params.require(:post).permit(:title, :image, :content, :prefecture_id, :name).merge(user_id: current_user.id)
-=======
     params.require(:post).permit(:title, :image, :content, :prefecture_id, :address, :latitude, :longtitude, :maptitle).merge(user_id: current_user.id)
->>>>>>> Stashed changes
   end
 
   def move_to_index
@@ -47,5 +43,3 @@ class PostsController < ApplicationController
   end
 
 end
-
-# (:title, :image, :content, :prefecture_id,)

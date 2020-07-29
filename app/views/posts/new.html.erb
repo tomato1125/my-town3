@@ -8,10 +8,10 @@
       <div class='FormArea'>
         <ul class='FormSpace'>
           <li class="PrefectureSelect">
-            <label for="prefucture">Prefecture：</label>
-            <%= form.collection_select :prefucture, Prefecture.all, :id, :name, include_blank: '選択してください' %>
+            <label class="prefuctureWord" for="prefecture">Prefecture：</label>
+            <%= form.collection_select( :prefecture_id, Prefecture.all, :id, :name, {include_blank: '選択してください'}, {class: "PrefectureSelect__input"}) %>
           </li>
-          <%# <li class="CategorySelect"> %>
+          <%# <li class="CategorySelect">prompt: true %>
             <%# <label for="category">Category：</label> %>
             <%# <%= form.collection_select :category_id, Category.all, :id, :name %>
           <%# </li> %>
@@ -25,7 +25,7 @@
           </li>
           <li class='content'>
             <label for="contentSpace">Content：</label>
-            <%= form.text_area :content, class: 'contents', placeholder: "コメントを入力してください" %>
+            <%= form.text_area :content, class: 'content__input', placeholder: "コメントを入力してください" %>
           </li>
           <li class='send'>
             <%= form.submit "SEND", class: 'sendBtn', value: "投稿" %>

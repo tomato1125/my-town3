@@ -1,7 +1,6 @@
 //= require jquery
 //= require rails-ujs
-<<<<<<< Updated upstream
+//= require turbolinks
+//= require underscore
+//= require gmaps/google
 //= require_tree .
-=======
-//= require_tree .
->>>>>>> Stashed changes

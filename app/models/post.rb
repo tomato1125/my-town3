@@ -1,9 +1,4 @@
 class Post < ApplicationRecord
-<<<<<<< Updated upstream
-  belongs_to :user, optional: true
-  belongs_to :prefecture, optional: true
-  # belongs_to :category
-=======
   validates :title,presence: true
   validates :content,presence: true
   validates :image,presence: true
@@ -14,7 +9,6 @@ class Post < ApplicationRecord
   belongs_to :user
   belongs_to :prefecture
   has_one :map
->>>>>>> Stashed changes
   has_many :comments, foreign_key: :post_id
 
   geocoded_by :address
