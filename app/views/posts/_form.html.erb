@@ -2,14 +2,14 @@
   <div class='formArea'>
     <div class='inputArea'>
       <ul class='formSpace'>
-        <li class="PrefectureSelect">
+        <li class="prefecture">
           <label class="labelName" for="prefecture">Prefecture：</label>
-          <%= form.collection_select( :prefecture_id, Prefecture.all, :id, :name, {include_blank: '選択してください'}, {class: "PrefectureSelect__input"}) %>
+          <%= form.collection_select( :prefecture_id, Prefecture.all, :id, :name, {include_blank: '選択してください'}, {class: "prefecture__input"}) %>
         </li>
-        <%# <li class="CategorySelect">prompt: true %>
-          <%# <label for="category">Category：</label> %>
-          <%# <%= form.collection_select :category_id, Category.all, :id, :name %>
-        <%# </li> %>
+        <li class="category">
+          <label class="labelname" for="category">Category：</label>
+          <%= form.collection_select :category_id, Category.all, :id, :name, {include_blank: '選択してください'}, {class: "category__input"} %>
+        </li>
         <li class="title">
           <label class="labelName" for="titleSpace">Title：</label>
           <%= form.text_field :title, class: 'title__input', placeholder: "タイトルを入力してください" %>

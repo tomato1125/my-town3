@@ -10,7 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_29_011600) do
+ActiveRecord::Schema.define(version: 2020_07_30_091031) do
+
+  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "category_prefectures", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "category_id", null: false
+    t.bigint "prefecture_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["category_id"], name: "index_category_prefectures_on_category_id"
+    t.index ["prefecture_id"], name: "index_category_prefectures_on_prefecture_id"
+  end
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "comments"
@@ -34,6 +49,8 @@ ActiveRecord::Schema.define(version: 2020_07_29_011600) do
     t.float "latitude"
     t.float "longitude"
     t.text "maptitle"
+    t.bigint "category_id", null: false
+    t.index ["category_id"], name: "index_posts_on_category_id"
     t.index ["prefecture_id"], name: "index_posts_on_prefecture_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
@@ -66,8 +83,11 @@ ActiveRecord::Schema.define(version: 2020_07_29_011600) do
     t.index ["user_id"], name: "index_users_prefectures_on_user_id"
   end
 
+  add_foreign_key "category_prefectures", "categories"
+  add_foreign_key "category_prefectures", "prefectures"
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
+  add_foreign_key "posts", "categories"
   add_foreign_key "posts", "prefectures"
   add_foreign_key "posts", "users"
   add_foreign_key "users_prefectures", "prefectures"

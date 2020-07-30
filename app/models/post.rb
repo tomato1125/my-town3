@@ -8,6 +8,7 @@ class Post < ApplicationRecord
 
   belongs_to :user
   belongs_to :prefecture
+  belongs_to :category
   has_many :comments, foreign_key: :post_id
 
   geocoded_by :address
