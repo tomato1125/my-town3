@@ -1,38 +1,22 @@
 <div class="flex-container">
   <div class="flex-slide home">
-    <a class="flex-title flex-title-home">favolite</a>
+    <%= link_to 'favorite', 'categories/index?category_id=0', class: "flex-title flex-title"%>
     <div class="flex-about flex-about-home"><p>Click here to navigate to the home section of the website</p></div>
   </div>
-  <a class="flex-slide food">
-    <div class="flex-title">food</div>
-    <div class="flex-about"><p>Click here to navigate to the gourmet section of the website</p></div>
-  </a>
-  <div class="flex-slide about">
-    <a class="flex-title">shopping</a>
-    <div class="flex-about"><p>Click here to navigate to the About section of the website</p></div>
+  <div class="flex-slide food">
+    <%= link_to 'food', 'categories/index?category_id=1', class: "flex-title flex-title"%>
+    <div class="flex-about flex-about-home"><p>Click here to navigate to the home section of the website</p></div>
   </div>
-  <a class="flex-slide work">
-    <div class="flex-title">nature</div>
-    <div class="flex-about"><p>Listing relevant snippets of work:</p></div>
-  </a>
-  <a class="flex-slide contact">
-    <div class="flex-title">event</div>
-    <div class="flex-about"><p>Use the contact form below</p></div>
-  </a>
+  <div class="flex-slide about">
+    <%= link_to 'shopping', 'categories/index?category_id=2', class: "flex-title flex-title"%>
+    <div class="flex-about flex-about-home"><p>Click here to navigate to the home section of the website</p></div>
+  </div>
+  <div class="flex-slide work">
+    <%= link_to "nature", "categories/index?category_id=3", class: "flex-title flex-title" %>
+    <div class="flex-about flex-about-home"><p>Click here to navigate to the home section of the website</p></div>
+  </div>
+  <div class="flex-slide contact">
+    <%= link_to 'event', 'categories/index?category_id=4', class: "flex-title flex-title"%>
+    <div class="flex-about flex-about-home"><p>Click here to navigate to the home section of the website</p></div>
+  </div>
 </div>
-
-
-<%# <div class='FlexSlider'>
-  <ul class='FlexSlider__Slides'>
-    <li class='FlexSlider__SlidePhoto'>
-    </li>
-    <li class='FlexSlider__SlidePhoto'>
-    </li>
-    <li class='FlexSlider__SlidePhoto'>
-    </li>
-    <li class='FlexSlider__SlidePhoto'>
-    </li>
-    <li class='FlexSlider__SlidePhoto'>
-    </li>
-  </ul>
-</div> %>

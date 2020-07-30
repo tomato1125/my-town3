@@ -47,3 +47,12 @@ Prefecture.seed(:id,
   { :id => 45, :name => "鹿児島県" },
   { :id => 46, :name => "沖縄県" }
 )
+
+
+Category.seed(:id,
+  { :id => 0, :name => "faborite" },
+  { :id => 1, :name => "food" },
+  { :id => 2, :name => "shopping" },
+  { :id => 3, :name => "nature" },
+  { :id => 4, :name => "event" }
+)
