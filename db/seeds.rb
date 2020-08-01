@@ -50,7 +50,7 @@ Prefecture.seed(:id,
 
 
 Category.seed(:id,
-  { :id => 0, :name => "faborite" },
+  { :id => 0, :name => "favorite" },
   { :id => 1, :name => "food" },
   { :id => 2, :name => "shopping" },
   { :id => 3, :name => "nature" },
