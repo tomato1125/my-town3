@@ -67,4 +67,5 @@ gem 'pry-rails'
 gem 'jquery-rails'
 gem 'geocoder'
 gem 'seed-fu'
+gem 'dotenv-rails'
 
