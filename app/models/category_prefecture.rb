@@ -1,4 +1,4 @@
 class CategoryPrefecture < ApplicationRecord
-  belong_to :category
-  belong_to :prefecture
+  belongs_to :category
+  belongs_to :prefecture
 end

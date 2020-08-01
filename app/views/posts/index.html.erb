@@ -23,13 +23,14 @@
 <div class='CategorySearch'>
   <%= render partial: "Flexslider" %>
 </div>
-<div class='AreaSearch'>
-  <p class='AreaSearch__Name'> Prefecture
+<div class='CategorySection'>
+  <p class='CategoryHeading'> Prefecture
   </p>
-  <div class='AreaSearch__Bottum'>
-    <%= link_to '検索', '#', method: :get %>
-  </div>
 </div>
+<div class='CategorySearch'>
+  <%= render partial: "prefectureFlexslider" %>
+</div>
+
 <div class='PresentLocationSearch'>
   <div class='PresentLocationSearch__Bottum'>
   </div>
@@ -40,7 +41,7 @@
   </h2>
 </div>
 <div class="PostIndex">
-  <% @posts.each do |post| %>
+  <% @posts.first(5).each do |post| %>
     <div class='NewPost'>
       <div class='UserInfomation'>
         <div class='UserInfomation__userImage'>
@@ -52,12 +53,14 @@
           </a>
         </span>
         <div class='UserInfomation__date'>
+          <i class="far fa-clock"></i>
           <span><%= time_ago_in_words(post.created_at) %>前</span>
         </div>
       </div>
       <div class="PostTitle">
         <span>~ <%= post.title %> ~</span>
       </div>
+      <%= link_to({:controller => "posts", :action => "show", :id => post.id}) do %>
       <div class='PostImage' style="background-image: url(<%= post.image %>);">
         <div class="AreaInfomation">
           <div class="UserIcon">
@@ -68,6 +71,7 @@
           </div>
         </div>
         <div class="more">
+          <span><%= image_tag 'arrow_top.png' %></span>
           <ul class="more_list">
             <li>
               <%= link_to '詳細', post_path(post.id), method: :get %>
@@ -80,9 +84,7 @@
           </ul>
         </div>
       </div>
-      <%# <div class='PostDescription'>
-        <%= post.content %>
-      <%# </div> %>
+      <% end %>
       <div class='ReviewBox'>
         <div class='ReviewBox__LikeIcon'>
           <i class="fas fa-thumbs-up"></i>
