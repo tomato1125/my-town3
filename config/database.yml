@@ -49,6 +49,9 @@ test:
 #
 production:
   <<: *default
-  database: my_town3_production
-  username: my_town3
-  password: <%= ENV['MY_TOWN3_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  # database: my_town3_production
+  # username: my_town3
+  # password: <%= ENV['MY_TOWN3_DATABASE_PASSWORD'] %>
