@@ -16,18 +16,18 @@
     </div>
   </div>
 </div>
-<div class='CategorySection'>
-  <p class='CategoryHeading'>Category
+<div class='categorySection'>
+  <p class='categoryHeading'>Category
   </p>
 </div>
-<div class='CategorySearch'>
+<div class='categorySearch'>
   <%= render partial: "Flexslider" %>
 </div>
-<div class='CategorySection'>
-  <p class='CategoryHeading'> Prefecture
+<div class='prefectureSection'>
+  <p class='prefectureHeading'> Prefecture
   </p>
 </div>
-<div class='CategorySearch'>
+<div class='prefectureSearch'>
   <%= render partial: "prefectureFlexslider" %>
 </div>
 
@@ -60,7 +60,6 @@
       <div class="PostTitle">
         <span>~ <%= post.title %> ~</span>
       </div>
-      <%= link_to({:controller => "posts", :action => "show", :id => post.id}) do %>
       <div class='PostImage' style="background-image: url(<%= post.image %>);">
         <div class="AreaInfomation">
           <div class="UserIcon">
@@ -84,7 +83,6 @@
           </ul>
         </div>
       </div>
-      <% end %>
       <div class='ReviewBox'>
         <div class='ReviewBox__LikeIcon'>
           <i class="fas fa-thumbs-up"></i>

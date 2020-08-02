@@ -87,14 +87,21 @@
   }
 }
 
-.CategorySection {
+.categorySection {
   display: flex;
   justify-content: center;
   background-color: #222222;
+  .categoryHeading {
+    font-size: 25px;
+    height: 100px;
+    color: #FFFFFF;
+    margin: 0 0 0 0;
+    padding: 25px 0;
+  }
 }
-.CategorySearch {
+.categorySearch {
   width: 100vw;
-  height: 700px;
+  height: 70vh;
   font-size: 25px;
   font-weight: bold;
   display: flex;
@@ -103,32 +110,36 @@
   flex-direction: column;
 }
 
-.CategoryHeading {
-  font-size: 25px;
-  height: 100px;
-  color: #FFFFFF;
-  margin: 0 0 0 0;
-  padding: 25px 0;
-}
 
 
-
-.AreaSearch {
+.prefectureSection {
   background-color: #222222;
-  height: 700px;
+  height: 200px;
   display: flex;
+  padding-top: 30px;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   list-style: none;
-  &__Name {
-    font-size: 30px;
-    color: #ffffff;
-  }
-  &__Bottum {
-    font-size: 20px;
+  .prefectureHeading {
+    font-size: 25px;
+    height: 100px;
+    color: #FFFFFF;
+    margin: 0 0 0 0;
+    padding: 25px 0;
   }
 }
+.prefectureSearch {
+  width: 100vw;
+  height: 80vh;
+  font-size: 25px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  background-color: #222222;
+  flex-direction: column;
+}
+
 
 .PresentLocationSearch {
   background-color: #4682B4;
