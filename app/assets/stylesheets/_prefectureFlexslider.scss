@@ -18,7 +18,8 @@
 .pflex-title {
   color: #f1f1f1;
   position: relative;
-  font-size: 2.5vw;
+  font-size: 2.0vw;
+  padding-left: 15px;
   margin: auto;
   text-decoration: none;
   // display: flex;
@@ -239,6 +240,12 @@ flexAboutHome {  0% {
 }
 .food {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://food-foto.jp/img/f_181_topimg.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+.pwork {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://cdn.pixabay.com/photo/2020/06/26/13/46/frenkendorf-5342811_960_720.jpg);
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
