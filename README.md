@@ -1,9 +1,12 @@
 # アプリ名
 
-My Town  ~「My Town」はあなたの地元や今住んでいる場所の好きなところを共有する投稿サイトです。~
+My Town
+
 
 
 # アプリについて
+
+「My Town」はあなたの地元や今住んでいる場所の好きなところを共有する投稿サイトです。
 
 ## 位置情報付きの投稿機能
 - ユーザーは画像（１枚）、コメントをつけて投稿ができます。
@@ -15,11 +18,13 @@ My Town  ~「My Town」はあなたの地元や今住んでいる場所の好き
 - 投稿した情報は文字列検索、カテゴリー別検索、県別検索が可能です。
 
 
+
 # 本番環境
 - URL: https://my-town3.herokuapp.com/
 - ユーザー名（テスト）: guest
-  e-mail: guest@mail.com
-  password: guest1111
+- e-mail（テスト）: guest@mail.com
+- password（テスト）: guest1111
+
 
 
 # 作成した経緯
@@ -35,8 +40,10 @@ My Town  ~「My Town」はあなたの地元や今住んでいる場所の好き
 おります。
 
 
+
 # 工夫したところ
 ユーザーがより直感的にアプリを使ってもらえるように表示はできるだけシンプルにし、必要な情報を必要最低限表示できるように実装しました。
+
 
 
 #  開発環境
@@ -53,12 +60,14 @@ Ruby/Ruby on Rails/JavaScript/jQuery/Haml/Sass/MySQL/Github/heroku/Visual Studio
 - gem 'dotenv-rails'
 
 
+
 # 今後実装したい機能
 - 投稿時、選択画像をjavascriptでプレビュー表示させる
 - mapの検索精度の向上（現状、精度が低い）
 - ユーザーへのDM機能
 - 絞り込み検索機能の実装
 - バリデーションの設定・テストコードの記述
+
 
 
 # DB設計
