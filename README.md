@@ -14,16 +14,15 @@ My Town
 - 投稿時、マップに地名を入力し検索することで共有したい場所の位置情報を確認でき、登録地名を入力することができます。
 - 登録した情報は各投稿の詳細にて確認することが可能です。
 ![gif1](https://user-images.githubusercontent.com/66346042/89199947-4da5da80-d5ea-11ea-8c27-c53a31450e82.gif)
-- ![都道府県とカテゴリーの選択](https://gyazo.com/c16375831f92e41319b7dc779ed836ca)
-- ![マップ検索と投稿](https://gyazo.com/c4ff2101ee31a101a34c5c4d1e17824e)
-- ![投稿の詳細表示](https://gyazo.com/37740af5006d5d02773d0257589a00fc)
+![gif2](https://user-images.githubusercontent.com/66346042/89201021-d5401900-d5eb-11ea-81d2-eb9717953e7d.gif)
+![gif3](https://user-images.githubusercontent.com/66346042/89201536-98285680-d5ec-11ea-83bc-029b2ff15fb6.gif)
 
 ## 投稿検索機能
 - 投稿した情報は文字列検索、カテゴリー別検索、県別検索が可能です。
 
 !(https://gyazo.com/cb55827022892c7ee0eda58f95df74e3)
-!(https://gyazo.com/c72c9f2fdf93a86fbca6ea9c084c77dc)
-!(https://gyazo.com/94b0e619ddbe16a838b96005f73605a4)
+![gif4](https://user-images.githubusercontent.com/66346042/89202005-492ef100-d5ed-11ea-828b-e6f27bbad314.gif)
+![gif5](https://user-images.githubusercontent.com/66346042/89202466-f43faa80-d5ed-11ea-9fde-124288e6bddd.gif)
 
 
 
