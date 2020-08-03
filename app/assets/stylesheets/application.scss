@@ -6,6 +6,7 @@
 @import "modules/show";
 @import "modules/toppage";
 @import "modules/newpost";
+@import "user";
 @import "prefectureFlexslider";
 @import "slick";
 @import "slick-theme";
@@ -28,6 +29,14 @@
  *= require_self
  */
 
+
+ //トップページのヘッダー部分
+ .header {
+   color: #ffffff;
+ }
+ .grid-6 {
+   font-size: 30px;
+ }
 
  // スライドに関するCSS
 .header {

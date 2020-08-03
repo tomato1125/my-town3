@@ -22,11 +22,11 @@
   <body>
     <header class="header">
       <div class="header__ber">
-        <p><img src="file:///Users/naokiyoshida/Downloads/My%20Town%20(1).jpg" alt="ロゴを表示" class='logo', ></p>
+        <%# <p><img src="MyTownLogo.jpg" width="400" height="50" alt="ロゴを表示" class='logo'></p> %>
         <h1 class="grid-6"><a href="/">My town</a></h1>
         <% if user_signed_in? %>
           <div class="user_nav_logout">
-            <span><%= current_user.name %></span>
+            ログイン名: <span><%= current_user.name %></span>
             <%= link_to "マイページ", "/users/#{current_user.id}" %>
             <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
             <%= link_to  "投稿する", new_post_path, class: "post" %>
