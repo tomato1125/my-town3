@@ -53,8 +53,13 @@ https://gyazo.com/94b0e619ddbe16a838b96005f73605a4
 
 
 
+# 作成時の課題とそれをどのように解決したか
+作成時の課題はエラー解決を行う上で問題箇所の特定を把握することでした。作成初期段階はエラー出現時、エラーを解決するまでにかなりの時間を要しました。原因はエラー文やエラーログを細かく見れていなかったためです。作成を進める中でエラーが出現した際は、エラー文やエラーログを徹底的に確認することに注力しました。エラー文やログには問題を解決するためのヒントが記載されていることがほとんどなので、エラー文を基に検索を行ったり、自分の中で仮説を立てて解決を試みるうちに以前よりもエラー解決がスムーズにできるようになったと実感しております。エラー文を基に問題を分解・抽出し、各問題に対してどのような対処が有効かを考えることが重要だと感じております。
+
+
+
 #  開発環境
-Ruby/Ruby on Rails/JavaScript/jQuery/Haml/Sass/MySQL/Github/heroku/Visual Studio Code
+Ruby/Ruby on Rails/JavaScript/jQuery/Haml/Sass/MySQL/Github/AWS/heroku/Visual Studio Code
 
 - ruby '2.6.5'
 - ruby on rails '6.0.0'
@@ -71,7 +76,7 @@ Ruby/Ruby on Rails/JavaScript/jQuery/Haml/Sass/MySQL/Github/heroku/Visual Studio
 # 今後実装したい機能
 - 投稿時、選択画像をjavascriptでプレビュー表示させる
 - mapの検索精度の向上（現状、精度が低い）
-- ユーザーへのDM機能
+- お気に入り登録機能の実装
 - 絞り込み検索機能の実装
 - バリデーションの設定・テストコードの記述
 
