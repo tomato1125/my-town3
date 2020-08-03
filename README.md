@@ -14,7 +14,7 @@ My Town
 - 投稿時、マップに地名を入力し検索することで共有したい場所の位置情報を確認でき、登録地名を入力することができます。
 - 登録した情報は各投稿の詳細にて確認することが可能です。
 ![gif1](https://user-images.githubusercontent.com/66346042/89199947-4da5da80-d5ea-11ea-8c27-c53a31450e82.gif)
-![gif2](https://user-images.githubusercontent.com/66346042/89201021-d5401900-d5eb-11ea-81d2-eb9717953e7d.gif)
+![gif2](https://user-images.githubusercontent.com/66346042/89203609-d3785480-d5ef-11ea-9820-95fcbbb34cea.gif)
 ![gif3](https://user-images.githubusercontent.com/66346042/89201536-98285680-d5ec-11ea-83bc-029b2ff15fb6.gif)
 
 ## 投稿検索機能
