@@ -6,7 +6,7 @@
   padding: 24px;
 }
 
-.loginPage{
+.accountPage{
   display: flex;
   height: 100vh;
   width: 100vw;
@@ -17,11 +17,11 @@
   flex-direction: column;
 }
 
-.loginMain{
+.accountMain{
   display: flex;
   justify-content: center;
   align-items: center;
-  .loginPageBox{
+  .accountPageBox{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -32,7 +32,7 @@
       justify-content: center;;
       font-size: 22px;
     }
-    .loginPageBoxForm {
+    .accountPageBoxForm {
       display: flex;
       justify-content: center;
       .formField{
@@ -69,8 +69,8 @@
         justify-content: center;
         .next_btn{
           margin-bottom: 24px;
-          background-color: #4682B4;
-          border: 1px solid #4682B4;
+          background-color: #1E90FF;
+          border: 1px solid #1E90FF;
           font-size: 14px;
           color: #fff;
           height: 48px;
@@ -79,8 +79,8 @@
         }
       }
       a{
-        font-size: 17px;
-        color: #4682B4;
+        font-size: 20px;
+        color: #ffffff;
         text-decoration: none;
         margin-bottom: 24px;
         display: flex;
