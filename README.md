@@ -20,7 +20,7 @@ My Town
 ## 投稿検索機能
 - 投稿した情報は文字列検索、カテゴリー別検索、県別検索が可能です。
 
-!(https://gyazo.com/cb55827022892c7ee0eda58f95df74e3)
+![jpg1](https://user-images.githubusercontent.com/66346042/89242296-2c6dda00-d63c-11ea-9e31-b430dd97fa27.jpg)
 ![gif4](https://user-images.githubusercontent.com/66346042/89202005-492ef100-d5ed-11ea-828b-e6f27bbad314.gif)
 ![gif5](https://user-images.githubusercontent.com/66346042/89202466-f43faa80-d5ed-11ea-9fde-124288e6bddd.gif)
 
