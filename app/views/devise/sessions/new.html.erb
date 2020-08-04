@@ -1,12 +1,12 @@
-<div class="loginPage", style="background-image: url(<%= asset_path "TopPageImage.jpg" %>);">
-  <div class="loginMain">
-    <div class="loginPageBox">
+<div class="accountPage", style="background-image: url(<%= asset_path "TopPageImage.jpg" %>);">
+  <div class="accountMain">
+    <div class="accountPageBox">
       <h2>ログインページ</h2>
-      <div class="loginPageBoxForm">
+      <div class="accountPageBoxForm">
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
           <div class="formField">
             <div class='formField__lavel--normal'>
-              <%= f.label :email, "メールアドレス" %>
+              <%= f.label :email, "E-Mail" %>
             </div>
             <div class='formField__input--normal'>
               <%= f.text_field :email, autofocus: true, autocomplete: "email", class:"field", placeholder:"PC・携帯どちらでも可" %>
@@ -17,7 +17,7 @@
               <%= f.label :password, "パスワード" %>
             </div>
             <div class='formField__input--normal'>
-              <%= f.password_field :password, class:"field", autocomplete: "current-password", placeholder:"7文字以上で入力してください" %>
+              <%= f.password_field :password, class:"field", autocomplete: "current-password", placeholder:"6文字以上で入力してください" %>
             </div>
           </div>
           <div class="actions">
