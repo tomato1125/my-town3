@@ -52,8 +52,13 @@ group :test do
 end
 
 group :production do
-  gem 'mysql2', '>= 0.4.4'
+  gem 'unicorn', '5.4.1'
 end
+
+# 以下、herokuデプロイ用の記述
+# group :production do
+#   gem 'mysql2', '>= 0.4.4'
+# end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
