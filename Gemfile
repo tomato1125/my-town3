@@ -79,4 +79,4 @@ gem 'geocoder'
 gem 'seed-fu'
 gem 'dotenv-rails'
 gem 'kaminari'
-
+gem 'fog-aws'
