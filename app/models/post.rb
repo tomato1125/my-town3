@@ -14,6 +14,8 @@ class Post < ApplicationRecord
   geocoded_by :address
   before_validation :geocode
 
+  mount_uploader :image, ImageUploader
+
   def self.search(search)
     return Post.all unless search
     Post.where('content LIKE(?)', "%#{search}%")
