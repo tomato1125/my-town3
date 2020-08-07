@@ -27,7 +27,7 @@ My Town
 
 
 # 本番環境
-- URL: https://my-town3.herokuapp.com/
+- URL: https://52.69.73.67/
 - ユーザー名（テスト）: guest
 - e-mail（テスト）: guest@mail.com
 - password（テスト）: guest1111
