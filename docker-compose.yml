@@ -3,12 +3,14 @@ services:
   db:
     image: mysql:5.6.47
     environment:
-      MYSQL_ROOT_PASSWORD: .env
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: root
     ports:
       - "4306:3306"
 
   web:
     build: .
+    command: bash -c "bundle exec rake db:seed_fu && /bin/bash"
     command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
     volumes:
       - .:/app_name
