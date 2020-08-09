@@ -16,8 +16,10 @@
         </li>
         <li class='image'>
           <label class="labelName" for="imageSpace">Photo：</label>
-          <%= form.file_field :image, class: 'image__input', placeholder: "写真を選択してください" %>
+          <%= form.file_field :image, class: 'imageInput', placeholder: "写真を選択してください" %>
         </li>
+          <div class="prevImageBox">
+          </div>
         <li class='content'>
           <label class="labelName" for="contentSpace">Content：</label>
           <%= form.text_area :content, class: 'content__input', placeholder: "コメントを入力してください" %>
@@ -29,13 +31,13 @@
         </div>
         <div class="addressArea">
           <label class="addressArea__label" for="addressLabel">場所を検索：</label>
-          <%= form.text_field( :address, id: "address", placeholder: "地名・住所を入力してください", class: "addressArea__input") %>
+          <%= form.text_field( :address, id: "address", placeholder: "地名を入力してください（検索情報が投稿に反映されます）", class: "addressArea__input") %>
           <input type="button" value="検索" onclick="codeAddress()" class="addressArea__btn">
         </div>
         <div class="localeArea">
           <input type="hidden" name="map[address]" id="hidden_address" class="localeArea__hidden">
           <label class="localeArea__label" for="localeLabel">地名を入力：</label>
-          <%= form.text_field :maptitle, placeholder: "登録する地名を入力してください", class: "localeArea__input" %>
+          <%= form.text_field :maptitle, id: "maptitle", placeholder: "登録する地名を入力してください", class: "localeArea__input" %>
         </div>
         <div id='map'>
       </div>
@@ -45,3 +47,58 @@
     <%= form.submit "SEND", class: 'send__btn', value: "投稿する" %>
   </div>
 <% end %>
+
+<script>
+
+  let map
+  let geocoder
+  let marker
+
+  function initMap() {
+    geocoder = new google.maps.Geocoder()
+
+    mapInstance = new google.maps.Map(document.getElementById('map'), {
+      center: {
+        lat: 35.6807527,
+        lng: 139.7670716
+      },
+      zoom: 17
+    });
+  }
+
+  function codeAddress() {
+    let inputAddress = document.getElementById('address').value;
+
+    geocoder.geocode({
+      'address': inputAddress
+    }, function (results, status) {
+      if (status == 'OK') {
+        mapInstance.setCenter(results[0].geometry.location);
+
+        if(marker != null){
+        marker.setMap(null);
+        }
+        marker = null;
+
+        marker = new google.maps.Marker({
+          //map→mapInstanceに変更
+          map: mapInstance,
+          position: results[0].geometry.location
+        });
+
+        // google.maps.MarkerでGoogleMap上の指定位置にマーカが立つ
+        // google.maps.Markerインスタンスを生成
+        let maptitle = document.getElementById('maptitle');
+        maptitle.setAttribute("value", inputAddress);
+
+        let hidden_address = document.getElementById('hidden_address');
+        hidden_address.setAttribute("value", inputAddress);
+      } else {
+        alert('Geocode was not successful for the following reason: ' + status);
+      }
+    });
+  }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_API_KEY'] %>" async defer></script>
+<script src="//cdn.rawgit.com/mahnunchik/markerclustererplus/master/dist/markerclusterer.min.js"></script>
+<script src='//cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/infobox/src/infobox_packed.js' type='text/javascript'></script>
