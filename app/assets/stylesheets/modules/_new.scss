@@ -88,8 +88,8 @@
           padding: 10px 16px 8px;
           margin-top: 8px;
           &__input {
-            height: 20px;
-            width: auto;
+            height: auto;
+            width: 20vw;
             border-radius: 5px;
             border: 1px solid #ccc;
             background-color: #fff;
@@ -125,8 +125,8 @@
           padding: 0 16px 8px;
           margin-top: 5px;
           &__input {
-            height: auto;
-            width: auto;
+            height: 10vh;
+            width: 30vw;
             border-radius: 5px;
             color: #000000;
             border: 1px solid #ccc;
