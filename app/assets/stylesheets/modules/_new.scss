@@ -89,7 +89,7 @@
           margin-top: 8px;
           &__input {
             height: auto;
-            width: 20vw;
+            width: 30vw;
             border-radius: 5px;
             border: 1px solid #ccc;
             background-color: #fff;
@@ -217,6 +217,10 @@
   .inputArea {
     height: auto;
     flex-direction: column;
+    justify-content: center;
+  }
+  .formSpace {
+    padding-left: 100px;
   }
 
   .googleMap {
