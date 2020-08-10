@@ -12,7 +12,7 @@ $(function() {
       {
         breakpoint: 768,
         settings: {
-          arrows: false,
+          arrows: true,
           centerMode: true,
           centerPadding: '40px',
           slidesToShow: 3
@@ -21,7 +21,7 @@ $(function() {
       {
         breakpoint: 480,
         settings: {
-          arrows: false,
+          arrows: true,
           centerMode: true,
           centerPadding: '40px',
           slidesToShow: 1
