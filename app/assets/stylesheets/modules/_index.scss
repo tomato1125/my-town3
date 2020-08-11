@@ -165,6 +165,8 @@
 }
 
 .NewPost {
+  height: auto;
+  width: auto;
   padding: 50px 50px;
   display: flex;
   flex-direction: column;
@@ -186,27 +188,29 @@
 
 .UserInfomation {
   background-color: #222222;
-  height: 50px;
-  // width: 600px;
+  height: 5vh;
+  width: auto;
   display: flex;
   align-items: center;
   a {
     color: #4682B4;
   }
   &__userImage {
-    height: 50px;
-    width: 50px;
+    height: 5vh;
+    width: auto;
     font-size: 40px;
     color: #ffffff;
     background-color: #222222;
     text-align: center;
   }
   &__username {
+    width: auto;
     font-size: 25px;
     color: #4682B4;
     margin-left: 5px;
   }
   &__date {
+    width: auto;
     font-size: 12px;
     color: #4682B4;
     margin-left: 20px;
@@ -214,6 +218,7 @@
 }
 
 .PostTitle {
+  width: auto;
   font-size: 20px;
   background-color: #222222;
   color: #ffffff;
