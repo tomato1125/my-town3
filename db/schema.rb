@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_12_041353) do
+ActiveRecord::Schema.define(version: 2020_08_11_075221) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -35,12 +35,6 @@ ActiveRecord::Schema.define(version: 2020_08_12_041353) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["post_id"], name: "index_comments_on_post_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
-  end
-
-  create_table "employment_statuses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "incomes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -92,32 +86,32 @@ ActiveRecord::Schema.define(version: 2020_08_12_041353) do
   end
 
   create_table "recruitments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "title", null: false
     t.string "campany", null: false
     t.text "image"
+    t.text "jobDescription"
     t.integer "numberOfEmployees"
     t.text "feature", null: false
     t.text "workLocation", null: false
     t.text "eligibleEmployees", null: false
-    t.integer "age", null: false
     t.text "workingHours", null: false
-    t.text "salary", null: false
     t.text "insurance", null: false
     t.text "wellfare", null: false
     t.bigint "prefecture_id", null: false
+    t.text "vacation", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "industry_id", null: false
     t.bigint "position_id", null: false
     t.bigint "occupation_id", null: false
     t.bigint "income_id", null: false
-    t.text "title"
-    t.text "job_description"
-    t.text "vacation"
     t.index ["income_id"], name: "index_recruitments_on_income_id"
     t.index ["industry_id"], name: "index_recruitments_on_industry_id"
     t.index ["occupation_id"], name: "index_recruitments_on_occupation_id"
     t.index ["position_id"], name: "index_recruitments_on_position_id"
     t.index ["prefecture_id"], name: "index_recruitments_on_prefecture_id"
+    t.index ["user_id"], name: "index_recruitments_on_user_id"
   end
 
   create_table "subscriptions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -151,12 +145,6 @@ ActiveRecord::Schema.define(version: 2020_08_12_041353) do
     t.index ["user_id"], name: "index_users_prefectures_on_user_id"
   end
 
-  create_table "vacations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   add_foreign_key "category_prefectures", "categories"
   add_foreign_key "category_prefectures", "prefectures"
   add_foreign_key "comments", "posts"
@@ -164,11 +152,12 @@ ActiveRecord::Schema.define(version: 2020_08_12_041353) do
   add_foreign_key "posts", "categories"
   add_foreign_key "posts", "prefectures"
   add_foreign_key "posts", "users"
-  add_foreign_key "recruitments", "employment_statuses", column: "occupation_id"
   add_foreign_key "recruitments", "incomes"
   add_foreign_key "recruitments", "industries"
+  add_foreign_key "recruitments", "occupations"
   add_foreign_key "recruitments", "positions"
   add_foreign_key "recruitments", "prefectures"
+  add_foreign_key "recruitments", "users"
   add_foreign_key "subscriptions", "recruitments"
   add_foreign_key "subscriptions", "users"
   add_foreign_key "users_prefectures", "prefectures"
