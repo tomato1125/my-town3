@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_11_083354) do
+ActiveRecord::Schema.define(version: 2020_08_12_041353) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -108,19 +108,16 @@ ActiveRecord::Schema.define(version: 2020_08_11_083354) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "industry_id", null: false
     t.bigint "position_id", null: false
-    t.bigint "employment_status_id", null: false
-    t.bigint "vacation_id", null: false
+    t.bigint "occupation_id", null: false
     t.bigint "income_id", null: false
     t.text "title"
-    t.bigint "occupation_id", null: false
     t.text "job_description"
-    t.index ["employment_status_id"], name: "index_recruitments_on_employment_status_id"
+    t.text "vacation"
     t.index ["income_id"], name: "index_recruitments_on_income_id"
     t.index ["industry_id"], name: "index_recruitments_on_industry_id"
     t.index ["occupation_id"], name: "index_recruitments_on_occupation_id"
     t.index ["position_id"], name: "index_recruitments_on_position_id"
     t.index ["prefecture_id"], name: "index_recruitments_on_prefecture_id"
-    t.index ["vacation_id"], name: "index_recruitments_on_vacation_id"
   end
 
   create_table "subscriptions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -167,13 +164,11 @@ ActiveRecord::Schema.define(version: 2020_08_11_083354) do
   add_foreign_key "posts", "categories"
   add_foreign_key "posts", "prefectures"
   add_foreign_key "posts", "users"
-  add_foreign_key "recruitments", "employment_statuses"
+  add_foreign_key "recruitments", "employment_statuses", column: "occupation_id"
   add_foreign_key "recruitments", "incomes"
   add_foreign_key "recruitments", "industries"
-  add_foreign_key "recruitments", "occupations"
   add_foreign_key "recruitments", "positions"
   add_foreign_key "recruitments", "prefectures"
-  add_foreign_key "recruitments", "vacations"
   add_foreign_key "subscriptions", "recruitments"
   add_foreign_key "subscriptions", "users"
   add_foreign_key "users_prefectures", "prefectures"

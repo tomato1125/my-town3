@@ -1,7 +1,15 @@
 .jobInfomation {
+  background-image: image-url("NewPostImage2.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  // background-color: #222222;
   .pageTop {
+    color: #ffffff;
     display: flex;
     justify-content: center;
+    margin: 0 0 15px;
+    padding-top: 15px;
   }
   &__industry {
     display: flex;
@@ -11,12 +19,16 @@
 
 .formLavel {
   margin-top: 15px;
+  font-size: 20px;
+  color: #ffffff;
 }
 .top {
   margin-top: 40px;
+  color: #ffffff;
 }
 
 .jobForm {
+  font-size: 19px;
   display: flex;
   flex-direction: column;
   justify-content: center;
