@@ -4,7 +4,7 @@
       <ul class='formSpace'>
         <li class="prefecture">
           <label class="labelName" for="prefecture">Prefecture：</label>
-          <%= form.collection_select( :prefecture_id, Prefecture.all, :id, :name, {include_blank: '選択してください'}, {class: "prefecture__input"}) %>
+          <%= form.collection_select :prefecture_id, Prefecture.all, :id, :name, {include_blank: '選択してください'}, {class: "prefecture__input"} %>
         </li>
         <li class="category">
           <label class="labelname" for="category">Category：</label>
