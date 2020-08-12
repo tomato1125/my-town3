@@ -18,6 +18,9 @@
       <span class="formLavel">会社名・団体名
       </span>
       <%= form.text_area :campany, class: 'jobForm__campany__input', placeholder: "会社名を入力してください" %>
+      <span class="formLavel">従業員数
+      </span>
+      <%= form.number_field :numberOfEmployee, class: 'jobForm__campany__input', placeholder: "従業員数を入力してください" %>
     </div>
     <div class="jobForm__image">
       <span class="formLavel">イメージ写真
@@ -31,9 +34,12 @@
     </div>
     <div class="jobForm__recruitment">
       <h2 class="top">■求人について</h2>
+      <span class="formLavel">業種
+      </span>
+      <%= form.collection_select :industry_id, Industry.all, :id, :name, {include_blank: '業種を選択してください'}, {class: "jobForm__recruitment__input"} %>
       <span class="formLavel">職種（役割）
       </span>
-      <%= form.text_area :occupation, class: 'jobForm__recruitment__input', placeholder: "職種を入力してください" %>
+      <%= form.collection_select :employment_status_id, Occupation.all, :id, :name, {include_blank: '業種を選択してください'}, {class: "jobForm__recruitment__input"} %>
       <span class="formLavel">業務内容・取組内容
       </span>
       <%= form.text_area :job_description, class: 'jobForm__recruitment__input', placeholder: "仕事内容を入力してください" %>
@@ -45,16 +51,16 @@
       <%= form.text_area :eligibleEmployees, class: 'jobForm__conditions__appConditionInput', placeholder: "応募条件を入力してください" %>
       <span class="formLavel">雇用区分
       </span>
-      <%= form.text_area :position, class: 'jobForm__conditions__input', placeholder: "雇用区分を入力してください" %>
+      <%= form.collection_select :position_id, Position.all, :id, :name, {include_blank: '雇用区分を選択してください'}, {class: "jobForm__conditions__input"} %>
       <span class="formLavel">想定年収
       </span>
-      <%= form.text_area :eligibleEmployees, class: 'jobForm__conditions__input', placeholder: "想定年収を入力してください" %>
+      <%= form.collection_select :imcome_id, Income.all, :id, :income, {include_blank: '想定年収を選択してください'}, {class: "jobForm__conditions__input"} %>
     </div>
     <div class="jobForm__workInformation">
       <h2 class="top">■勤務情報</h2>
       <span class="formLavel">都道府県
       </span>
-      <%= form.text_area :workLocation, class: 'jobForm__workInformation__input', placeholder: "都道府県を入力してください" %>
+      <%= form.collection_select :prefecture_id, Prefecture.all, :id, :name, {include_blank: '選択してください'}, {class: "jobForm__workInformation__input"} %>
       <span class="formLavel">勤務地（詳細住所）
       </span>
       <%= form.text_area :workLocation, class: 'jobForm__workInformation__input', placeholder: "勤務地を入力してください" %>
@@ -68,7 +74,7 @@
       </span>
       <%= form.text_area :workLocation, class: 'jobForm__workInformation__input', placeholder: "休日・休暇を入力してください" %>
     <div class="jobForm__button">
-      <%= form.submit "#", class: 'jobForm__button--icon', value: "求人を登録する" %>
+      <%= form.submit "求人を登録する", class: 'jobForm__button--icon', value: "求人を登録する" %>
     </div>
   <% end %>
 </div>
