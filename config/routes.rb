@@ -14,4 +14,6 @@ Rails.application.routes.draw do
   resources :prefectures, only: [:index, :show]
 
   resources :newposts, only: [:index, :show]
+
+  resources :recruitments, only: [:index, :new, :create, :edit, :update, :show]
 end

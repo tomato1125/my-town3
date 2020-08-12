@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_30_091031) do
+ActiveRecord::Schema.define(version: 2020_08_11_083354) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -37,6 +37,36 @@ ActiveRecord::Schema.define(version: 2020_07_30_091031) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
+  create_table "employment_statuses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "incomes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "income"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "industries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "occupations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "positions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
     t.text "content"
@@ -61,6 +91,47 @@ ActiveRecord::Schema.define(version: 2020_07_30_091031) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "recruitments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "campany", null: false
+    t.text "image"
+    t.integer "numberOfEmployees"
+    t.text "feature", null: false
+    t.text "workLocation", null: false
+    t.text "eligibleEmployees", null: false
+    t.integer "age", null: false
+    t.text "workingHours", null: false
+    t.text "salary", null: false
+    t.text "insurance", null: false
+    t.text "wellfare", null: false
+    t.bigint "prefecture_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "industry_id", null: false
+    t.bigint "position_id", null: false
+    t.bigint "employment_status_id", null: false
+    t.bigint "vacation_id", null: false
+    t.bigint "income_id", null: false
+    t.text "title"
+    t.bigint "occupation_id", null: false
+    t.text "job_description"
+    t.index ["employment_status_id"], name: "index_recruitments_on_employment_status_id"
+    t.index ["income_id"], name: "index_recruitments_on_income_id"
+    t.index ["industry_id"], name: "index_recruitments_on_industry_id"
+    t.index ["occupation_id"], name: "index_recruitments_on_occupation_id"
+    t.index ["position_id"], name: "index_recruitments_on_position_id"
+    t.index ["prefecture_id"], name: "index_recruitments_on_prefecture_id"
+    t.index ["vacation_id"], name: "index_recruitments_on_vacation_id"
+  end
+
+  create_table "subscriptions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "recruitment_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["recruitment_id"], name: "index_subscriptions_on_recruitment_id"
+    t.index ["user_id"], name: "index_subscriptions_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -83,6 +154,12 @@ ActiveRecord::Schema.define(version: 2020_07_30_091031) do
     t.index ["user_id"], name: "index_users_prefectures_on_user_id"
   end
 
+  create_table "vacations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   add_foreign_key "category_prefectures", "categories"
   add_foreign_key "category_prefectures", "prefectures"
   add_foreign_key "comments", "posts"
@@ -90,6 +167,15 @@ ActiveRecord::Schema.define(version: 2020_07_30_091031) do
   add_foreign_key "posts", "categories"
   add_foreign_key "posts", "prefectures"
   add_foreign_key "posts", "users"
+  add_foreign_key "recruitments", "employment_statuses"
+  add_foreign_key "recruitments", "incomes"
+  add_foreign_key "recruitments", "industries"
+  add_foreign_key "recruitments", "occupations"
+  add_foreign_key "recruitments", "positions"
+  add_foreign_key "recruitments", "prefectures"
+  add_foreign_key "recruitments", "vacations"
+  add_foreign_key "subscriptions", "recruitments"
+  add_foreign_key "subscriptions", "users"
   add_foreign_key "users_prefectures", "prefectures"
   add_foreign_key "users_prefectures", "users"
 end

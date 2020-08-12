@@ -1,0 +1,74 @@
+<div class="jobInfomation">
+  <h1 class="pageTop">求人新規作成フォーム</h1>
+  <div class="jobInfomation__industry">
+    <div class="jobInfomation__industry__display">
+      <span class="formLavel">業種
+      </span>
+      <span class="formLavel">職種
+      </span>
+    </div>
+  </div>
+  <%= form_with(model: @recruitment, local: true, class:"jobForm") do |form| %>
+    <div class="jobForm__title">
+      <span class="formLavel">Title
+      </span>
+      <%= form.text_area :title, class: 'jobForm__title__input', placeholder: "タイトルを入力してください" %>
+    </div>
+    <div class="jobForm__campany">
+      <span class="formLavel">会社名・団体名
+      </span>
+      <%= form.text_area :campany, class: 'jobForm__campany__input', placeholder: "会社名を入力してください" %>
+    </div>
+    <div class="jobForm__image">
+      <span class="formLavel">イメージ写真
+      </span>
+      <%= form.file_field :image, class: 'jobForm__image__input', placeholder: "会社名を入力してください" %>
+    </div>
+    <div class="jobForm__feature">
+      <span class="formLavel">事業内容・特徴
+      </span>
+      <%= form.text_area :feature, class: 'jobForm__feature__input', placeholder: "事業内容・特徴を入力してください" %>
+    </div>
+    <div class="jobForm__recruitment">
+      <h2 class="top">■求人について</h2>
+      <span class="formLavel">職種（役割）
+      </span>
+      <%= form.text_area :occupation, class: 'jobForm__recruitment__input', placeholder: "職種を入力してください" %>
+      <span class="formLavel">業務内容・取組内容
+      </span>
+      <%= form.text_area :job_description, class: 'jobForm__recruitment__input', placeholder: "仕事内容を入力してください" %>
+    </div>
+    <div class="jobForm__conditions">
+      <h2 class="top">■条件</h2>
+      <span class="formLavel">応募条件
+      </span>
+      <%= form.text_area :eligibleEmployees, class: 'jobForm__conditions__appConditionInput', placeholder: "応募条件を入力してください" %>
+      <span class="formLavel">雇用区分
+      </span>
+      <%= form.text_area :position, class: 'jobForm__conditions__input', placeholder: "雇用区分を入力してください" %>
+      <span class="formLavel">想定年収
+      </span>
+      <%= form.text_area :eligibleEmployees, class: 'jobForm__conditions__input', placeholder: "想定年収を入力してください" %>
+    </div>
+    <div class="jobForm__workInformation">
+      <h2 class="top">■勤務情報</h2>
+      <span class="formLavel">都道府県
+      </span>
+      <%= form.text_area :workLocation, class: 'jobForm__workInformation__input', placeholder: "都道府県を入力してください" %>
+      <span class="formLavel">勤務地（詳細住所）
+      </span>
+      <%= form.text_area :workLocation, class: 'jobForm__workInformation__input', placeholder: "勤務地を入力してください" %>
+      <span class="formLavel">勤務時間（勤務期間）
+      </span>
+      <%= form.text_area :workingHours, class: 'jobForm__workInformation__input', placeholder: "勤務時間を入力してください" %>
+      <span class="formLavel">福利厚生
+      </span>
+      <%= form.text_area :wellfare, class: 'jobForm__workInformation__input', placeholder: "福利厚生を入力してください" %>
+      <span class="formLavel">休暇
+      </span>
+      <%= form.text_area :workLocation, class: 'jobForm__workInformation__input', placeholder: "休日・休暇を入力してください" %>
+    <div class="jobForm__button">
+      <%= form.submit "#", class: 'jobForm__button--icon', value: "求人を登録する" %>
+    </div>
+  <% end %>
+</div>
