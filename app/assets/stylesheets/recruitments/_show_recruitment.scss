@@ -1,0 +1,92 @@
+.jobInfomation {
+  background-image: image-url("NewPostImage2.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  .pageTop {
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    margin: 0 0 15px;
+    padding-top: 15px;
+  }
+  &__industry {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.formLavel {
+  margin-top: 15px;
+  font-size: 20px;
+  color: #ffffff;
+}
+.top {
+  margin-top: 40px;
+  color: #ffffff;
+}
+
+.jobForm {
+  font-size: 19px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  margin: 0 20vw;
+  background-color: #CCCCCC;
+  &__title {
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+  }
+  &__campany {
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+  }
+  &__image {
+    display: flex;
+    flex-direction: column;
+  }
+  &__feature {
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    &__input {
+      height: 40vh;
+    }
+  }
+  &__recruitment {
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+  }
+  &__conditions {
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+      &__appConditionInput {
+        height: 30vh;
+      }
+  }
+  &__workInformation {
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+  }
+  &__button {
+    width: 30vw;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    &--icon {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      margin: 50px 0;
+      width: 20vw;
+      height: 5vh;
+    }
+  }
+}

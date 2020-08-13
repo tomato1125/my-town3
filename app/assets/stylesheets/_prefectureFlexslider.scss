@@ -10,80 +10,8 @@
   flex-direction: column;
 }
 
-@media (max-height: 550px) {
-
-.pflex-container {
-  height: 45vh;
-  overflow: hidden;
-}
-.prefecture {
-  font-size: 1.9vh;
-}
-.pflex-about {
-  //   opacity: 0;
-    color: #f1f1f1;
-    margin-right: 3px;
-    font-size: 1.9vh;
-}
-// .prefecture {
-//   height: 10vh;
-//   // margin-left: 5px;
-//   font-size: 0.5em;
-}
-// }
-
-.pflex-title {
-  color: #f1f1f1;
-  position: relative;
-  font-size: 2.5vh;
-  padding-left: 15px;
-  margin-top: 15px;
-  text-decoration: none;
-  // display: flex;
-  text-align: center;
-  // transform: rotate(40deg);
-  top: 20%;
-  // -webkit-transition: all 500ms ease;
-  // -moz-transition: all 500ms ease;
-  // -ms-transition: all 500ms ease;
-  // -o-transition: all 500ms ease;
-  // transition: all 500ms ease;
-}
-
-// @media screen and (max-width: 768px) {
-
-// .pflex-title { transform: rotate(0deg) !important; }
-// }
-.prefecture {
-  height: 1vh;
-  padding: 0 5%;
-  margin-top: 3.7vh;
-  font-size: 1.9vh;
-}
-.pflex-about {
-//   opacity: 0;
-  color: #f1f1f1;
-  margin-right: 8px;
-  font-size: 1.1vw;
-//   padding: 5%;
-  // top: 62%;
-  // left: -15%;
-}
-
-// @media screen and (min-width: 900px) {
-
-// .prefecture {
-//   font-size: 0.5em;
-//   padding: 0px 50px;
-//   margin-top: 3vh;
-// }
-
-// .pflex-about {
-//   font-size: 1px;
-// }
-// }
-
 .pflex-slide {
+  overflow: hidden;
   -webkit-flex: 1;
   /* Safari 6.1+ */
   -ms-flex: 1;
@@ -96,103 +24,34 @@
   -o-transition: all 400ms ease;
   transition: all 400ms ease;
 }
-
-// @media screen and (max-width: 768px) {
-
-.pflex-slide {
-  // overflow: auto;
-  overflow: hidden;
-}
-// }
-
-// @media screen and (max-width: 768px) {
-
-// .pflex-slide p { font-size: 1em; }
-// }
-
-// @media screen and (max-width: 768px) {
-
-// .pflex-slide ul li { font-size: 2em; }
-// }
-
 .pflex-slide:hover {
   -webkit-flex-grow: 3;
   flex-grow: 3;
 }
 
-
-
-
-@keyframes 
-aboutFlexSlide {  0% {
- -webkit-flex-grow: 1;
- flex-grow: 1;
-}
- 50% {
- -webkit-flex-grow: 3;
- flex-grow: 3;
-}
- 50% {
- -webkit-flex-grow: 1;
- flex-grow: 1;
-}
+.pflex-title {
+  color: #f1f1f1;
+  position: relative;
+  font-size: 2.5vh;
+  padding-left: 15px;
+  margin-top: 15px;
+  text-decoration: none;
+  text-align: center;
+  top: 20%;
 }
 
-// @media screen and (min-width: 768px) {
-
-// .pflex-title-home {
-//   transform: rotate(90deg);
-//   top: 15%;
-// }
-
-
-// @keyframes 
-// homeFlextitle {  0% {
-//  transform: rotate(90deg);
-//  top: 15%;
-// }
-//  50% {
-//  transform: rotate(0deg);
-//  top: 15%;
-// }
-//  100% {
-//  transform: rotate(90deg);
-//  top: 15%;
-// }
-// }
-
-.pflex-about-home { opacity: 0; }
-
-// @media screen and (min-width: 768px) {
-
-// .flex-about-home {
-//   -moz-animation: flexAboutHome;
-//   -moz-animation-duration: 3s;
-//   -moz-animation-iteration-count: 1;
-//   -moz-animation-delay: 0s;
-//   -webkit-animation: flexAboutHome;
-//   -webkit-animation-duration: 3s;
-//   -webkit-animation-iteration-count: 1;
-//   -webkit-animation-delay: 0s;
-//   animation: flexAboutHome;
-//   animation-duration: 3s;
-//   animation-iteration-count: 1;
-//   animation-delay: 0s;
-// }
-// }
-
-@keyframes 
-flexAboutHome {  0% {
- opacity: 0;
-}
- 50% {
- opacity: 1;
-}
- 100% {
- opacity: 0;
-}
+.prefecture {
+  height: 1vh;
+  padding: 0 5%;
+  margin-top: 3.7vh;
+  font-size: 1.9vh;
 }
 
+.pflex-about {
+  color: #f1f1f1;
+  margin-right: 8px;
+  font-size: 1.1vw;
+}
 
 .pwork {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://cdn.pixabay.com/photo/2020/06/26/13/46/frenkendorf-5342811_960_720.jpg);
@@ -200,3 +59,29 @@ flexAboutHome {  0% {
   background-position: center center;
   background-attachment: fixed;
 }
+
+@media (max-width: 1000px) {
+
+.prefectureSearch {
+  height: 45vh;
+  border-bottom: none;
+}
+
+.pflex-container {
+  height: 35vh;
+  margin-top: 100px;
+  overflow: hidden;
+}
+.pflex-title {
+  font-size: 1.7vh;
+}
+.prefecture {
+  font-size: 1vh;
+}
+.pflex-about {
+  color: #f1f1f1;
+  margin-right: 10px;
+  font-size: 1vh;
+}
+}
+
