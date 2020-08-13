@@ -1,0 +1,87 @@
+<div class="jobInfomation">
+  <h1 class="pageTop">
+    <%= @recruitment.title %>
+  </h1>
+  <div class="jobInfomation__industry">
+    <div class="jobInfomation__industry__display">
+      <span class="formLavel">
+        <%= @recruitment.industry.name %> /
+      </span>
+      <span class="formLavel">
+        <%= @recruitment.occupation.name %> /
+      </span>
+      <span class="formLavel">
+        <%= @recruitment.position.name %>
+      </span> のお仕事です
+    </div>
+  </div>
+  <div class="jobForm">
+  <%= form_with(model: @recruitment, local: true, class:"jobForm") do |form| %>
+    <div class="jobForm__campany">
+      <span class="formLavel">会社名・団体名
+      </span>
+      <%= @recruitment.campany %>
+      <span class="formLavel">従業員数
+      </span>
+      <%= @recruitment.numberOfEmployees %> 名
+    </div>
+    <div class="jobForm__image">
+      <span class="formLavel">イメージ写真
+      </span>
+      <%= @recruitment.image %>
+    </div>
+    <div class="jobForm__feature">
+      <span class="formLavel">事業内容・特徴
+      </span>
+      <%= @recruitment.feature %>
+    </div>
+    <div class="jobForm__recruitment">
+      <h2 class="top">■求人について</h2>
+      <span class="formLavel">業種
+      </span>
+      <%= @recruitment.industry.name %>
+      <span class="formLavel">職種（役割）
+      </span>
+      <%= @recruitment.occupation.name %>
+      <span class="formLavel">業務内容・取組内容
+      </span>
+      <%= @recruitment.jobDescription %>
+    </div>
+    <div class="jobForm__conditions">
+      <h2 class="top">■条件</h2>
+      <span class="formLavel">応募条件
+      </span>
+      <%= @recruitment.eligibleEmployees %>
+      <span class="formLavel">雇用区分
+      </span>
+      <%= @recruitment.position.name %>
+      <span class="formLavel">想定年収
+      </span>
+      <%= @recruitment.income.income %>
+    </div>
+    <div class="jobForm__workInformation">
+      <h2 class="top">■勤務情報</h2>
+      <span class="formLavel">都道府県
+      </span>
+      <%= @recruitment.prefecture.name %>
+      <span class="formLavel">勤務地（詳細住所）
+      </span>
+      <%= @recruitment.workLocation %>
+      <span class="formLavel">勤務時間（勤務期間）
+      </span>
+      <%= @recruitment.workingHours %>
+      <span class="formLavel">加入保険
+      </span>
+      <%= @recruitment.insurance %>
+      <span class="formLavel">福利厚生
+      </span>
+      <%= @recruitment.wellfare %>
+      <span class="formLavel">休暇
+      </span>
+      <%= @recruitment.vacation %>
+    <div class="jobForm__button">
+      <%= form.submit "この求人に応募する", class: 'jobForm__button--icon', value: "この求人に応募する" %>
+    </div>
+  <% end %>
+  </div>
+</div>

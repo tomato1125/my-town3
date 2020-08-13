@@ -224,12 +224,18 @@
   color: #ffffff;
 }
 .PostImage {
+  position: relative;
   border: 1px solid #000000;
   margin-top: 10px;
   height: 40%;
   width: 100%;
   color: #ffffff;
   border-radius: 20px;
+  a {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
 }
 
 .AreaInfomation {

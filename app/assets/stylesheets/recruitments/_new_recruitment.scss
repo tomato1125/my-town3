@@ -3,7 +3,6 @@
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
-  // background-color: #222222;
   .pageTop {
     color: #ffffff;
     display: flex;
@@ -86,6 +85,11 @@
       margin: 50px 0;
       width: 20vw;
       height: 5vh;
+      color: #ffffff;
+      background-color: #00BFFF;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 0 8px gray;
     }
   }
 }
