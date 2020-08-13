@@ -1,5 +1,9 @@
 class RecruitmentsController < ApplicationController
 
+  def index
+    @recruitments = Recruitment.includes(:user).order("created_at DESC")
+  end
+
   def new
     @recruitment = Recruitment.new
   end

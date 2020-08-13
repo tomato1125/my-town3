@@ -1,0 +1,40 @@
+<div class='recruitments'>
+  <h2 class='recruitments__heading'>
+    New Job Offer
+  </h2>
+</div>
+<div class="recruitmentIndex">
+  <% @recruitments.each do |recruitment| %>
+    <div class='newRecruitment'>
+      <a href="/recruitments/<%= recruitment.id %>"></a>
+      <span class="formLavel">
+        <%= recruitment.industry.name %> /
+      </span>
+      <div class='campanyInfomation'>
+        <span class='campanyInfomation__campanyName'>
+          <%= recruitment.campany %>
+        </span>
+        <div class='campanyInfomation__date'>
+          <i class="far fa-clock"></i>
+          <span><%= time_ago_in_words(recruitment.created_at) %>前</span>
+        </div>
+      </div>
+      <div class='recruitmentImage' style="background-image: url(<%= recruitment.image %>);">
+        <a href="/recruitments/<%= recruitment.id %>"></a>
+        <div class="AreaInfomation">
+          <div class="UserIcon">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <div class="iAreaName">
+            <%= recruitment.prefecture.name if recruitment.prefecture_id? %>
+          </div>
+        </div>
+      </div>
+      <div class="recruitmentTitle">
+        <span>~ <%= recruitment.title %> ~</span>
+      </div>
+      <div class='ReviewBox'>
+      </div>
+    </div>
+  <% end %>
+</div>

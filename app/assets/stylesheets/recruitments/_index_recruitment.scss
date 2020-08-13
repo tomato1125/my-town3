@@ -1,0 +1,148 @@
+.recruitments {
+  background-color: #222222;
+  height: 20vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px;
+  &__heading {
+    margin-top: 20px;
+    color: #ffffff;
+    background-color: #222222;
+  }
+}
+
+.recruitmentIndex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #222222;
+}
+
+.newRecruitment {
+  padding: 50px 50px;
+  display: flex;
+  flex-direction: column;
+  background-color: #333333;
+  border: 1px solid #4682B4;
+  border-radius: 10px;
+  width: 55vw;
+  height: 70vh;
+  margin: 50px;
+  position: relative;
+  a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.campanyInfomation {
+  height: 5vh;
+  width: auto;
+  display: flex;
+  align-items: center;
+  a {
+    color: #4682B4;
+  }
+  &__campanyName {
+    width: auto;
+    font-size: 25px;
+    color: #4682B4;
+    margin-left: 5px;
+  }
+  &__date {
+    width: auto;
+    font-size: 12px;
+    color: #4682B4;
+    margin-left: 20px;
+  }
+}
+
+.recruitmentTitle {
+  width: auto;
+  font-size: 20px;
+  color: #ffffff;
+  padding-top: 5vh;
+  text-align: center;
+}
+.recruitmentImage {
+  border: 1px solid #000000;
+  margin-top: 10px;
+  height: 35vh;
+  width: 50vw;
+  color: #ffffff;
+  border-radius: 20px;
+  position: relative;
+  a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.AreaInfomation {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  background-color: rgba($color: #000000, $alpha: 0.40);
+  border: #ffffff;
+  border-radius: 20px;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 90px;
+  size: 13px;
+  margin: 5px 0 0 5px;
+}
+
+.UserIcon {
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.AreaName {
+  font-size: 15px;
+  margin-left: 6px;
+}
+.PostDescription {
+  height: 70px;
+  width: 600px;
+  border: 1px solid #000000;
+  margin-top: 5px;
+}
+.ReviewBox {
+  height: 30px;
+  width: 200px;
+  margin-top: 7px;
+  display: flex;
+  justify-content: space-around;
+  &__LikeIcon {
+    color: #ffffff;
+    font-size: 20px;
+  }
+  &__NumberOfView {
+    color: #ffffff;
+    font-size: 20px;
+    margin-left: 20px;
+  }
+}
+
+.page {
+  background-color: #222222;
+  display: flex;
+  justify-content: center;
+  .pageselect {
+    background-color: #222222;
+  }
+}
+
+
