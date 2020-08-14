@@ -7,14 +7,16 @@
   <% @recruitments.each do |recruitment| %>
     <div class='newRecruitment'>
       <a href="/recruitments/<%= recruitment.id %>"></a>
-      <span class="formLavel">
-        <%= recruitment.industry.name %> /
-      </span>
-      <div class='campanyInfomation'>
-        <span class='campanyInfomation__campanyName'>
+      <ul class="newRecruitment--label">
+        <li><%= recruitment.industry.name %></li>
+        <li><%= recruitment.occupation.name %></li>
+        <li><%= recruitment.position.name %></li>
+      </ul>
+      <div class='campany'>
+        <span class='campany--name'>
           <%= recruitment.campany %>
         </span>
-        <div class='campanyInfomation__date'>
+        <div class='campany__date'>
           <i class="far fa-clock"></i>
           <span><%= time_ago_in_words(recruitment.created_at) %>前</span>
         </div>
@@ -33,7 +35,8 @@
       <div class="recruitmentTitle">
         <span>~ <%= recruitment.title %> ~</span>
       </div>
-      <div class='ReviewBox'>
+      <div class="jobForm__button">
+        <button tupe="button" class='jobForm__button--icon' value="お気に入りへ"></button>
       </div>
     </div>
   <% end %>
