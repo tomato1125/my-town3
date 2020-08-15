@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_11_075221) do
+ActiveRecord::Schema.define(version: 2020_08_15_060450) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -86,7 +86,6 @@ ActiveRecord::Schema.define(version: 2020_08_11_075221) do
   end
 
   create_table "recruitments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id", null: false
     t.string "title", null: false
     t.string "campany", null: false
     t.text "image"
@@ -106,21 +105,28 @@ ActiveRecord::Schema.define(version: 2020_08_11_075221) do
     t.bigint "position_id", null: false
     t.bigint "occupation_id", null: false
     t.bigint "income_id", null: false
+    t.bigint "employer_id"
+    t.index ["employer_id"], name: "index_recruitments_on_employer_id"
     t.index ["income_id"], name: "index_recruitments_on_income_id"
     t.index ["industry_id"], name: "index_recruitments_on_industry_id"
     t.index ["occupation_id"], name: "index_recruitments_on_occupation_id"
     t.index ["position_id"], name: "index_recruitments_on_position_id"
     t.index ["prefecture_id"], name: "index_recruitments_on_prefecture_id"
-    t.index ["user_id"], name: "index_recruitments_on_user_id"
   end
 
   create_table "subscriptions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id", null: false
     t.bigint "recruitment_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "name", null: false
+    t.string "phonetic", null: false
+    t.string "email", null: false
+    t.integer "tel", null: false
+    t.text "currentAdress", null: false
+    t.text "resume"
+    t.bigint "employee_id"
+    t.index ["employee_id"], name: "index_subscriptions_on_employee_id"
     t.index ["recruitment_id"], name: "index_subscriptions_on_recruitment_id"
-    t.index ["user_id"], name: "index_subscriptions_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -157,9 +163,9 @@ ActiveRecord::Schema.define(version: 2020_08_11_075221) do
   add_foreign_key "recruitments", "occupations"
   add_foreign_key "recruitments", "positions"
   add_foreign_key "recruitments", "prefectures"
-  add_foreign_key "recruitments", "users"
+  add_foreign_key "recruitments", "users", column: "employer_id"
   add_foreign_key "subscriptions", "recruitments"
-  add_foreign_key "subscriptions", "users"
+  add_foreign_key "subscriptions", "users", column: "employee_id"
   add_foreign_key "users_prefectures", "prefectures"
   add_foreign_key "users_prefectures", "users"
 end

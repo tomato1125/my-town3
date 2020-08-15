@@ -109,7 +109,7 @@
   border: 1px solid #000000;
   margin-top: 10px;
   height: 35vh;
-  width: 50vw;
+  // width: 100%;
   color: #ffffff;
   border-radius: 20px;
   position: relative;
@@ -153,22 +153,6 @@
   width: 600px;
   border: 1px solid #000000;
   margin-top: 5px;
-}
-.ReviewBox {
-  height: 30px;
-  width: 200px;
-  margin-top: 7px;
-  display: flex;
-  justify-content: space-around;
-  &__LikeIcon {
-    color: #ffffff;
-    font-size: 20px;
-  }
-  &__NumberOfView {
-    color: #ffffff;
-    font-size: 20px;
-    margin-left: 20px;
-  }
 }
 
 .page {
