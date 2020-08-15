@@ -80,7 +80,7 @@
       </span>
       <%= @recruitment.vacation %>
     <div class="jobForm__button">
-      <%= form.submit "この求人に応募する", class: 'jobForm__button--icon', value: "この求人に応募する" %>
+      <%= link_to "この求人に応募する", new_recruitment_subscription_path(@recruitment), class: 'jobForm__button--icon' %>
     </div>
   <% end %>
   </div>

@@ -1,0 +1,97 @@
+<div class="accountPage", style="background-image: url(<%= asset_path "TopPageImage.jpg" %>);">
+  <div class="accountMain">
+    <div class="accountPageBox">
+      <h2>求人募集</h2>
+      <div class="recuitInfomation">
+        <span class="recuitInfomation--content">
+          今回応募する求人
+        </span>
+        <div class="recuitInfomation__box">
+          <div class="recuitInfomation__box__image">
+          </div>
+          <div class="recuitInfomation__box__details">
+            <div class="recuitInfomation__box__details__about">
+              <label class="recuitInfomation__box__details__about--label">
+                会社名: 
+              </label>
+              <span class="recuitInfomation__box__details__about--span">
+                <%= @recruitment.campany %>
+              </span>
+            </div>
+            <div class="recuitInfomation__box__details__about">
+              <label class="recuitInfomation__label">
+                求人名: 
+              </label>
+              <span class="recuitInfomation__box__details__about--span">
+                <%= @recruitment.title %>
+              </span>
+            </div>
+            <div class="recuitInfomation__box__details__about">
+              <label class="recuitInfomation__label">
+                職種名: 
+              </label>
+              <span class="recuitInfomation__box__details__about--span">
+                <%= @recruitment.occupation.name %>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accountPageBoxForm">
+        <%= form_with(model: [@recruitment, @subscription], url: recruitment_subscriptions_path, local: true, class:"subscriptionForm") do |f| %>
+          <div class="formField">
+            <div class='formField__lavel--normal'>
+              <%= f.label :name %>
+            </div>
+            <div class='formField__input--normal'>
+              <%= f.text_field :name, autofocus: true, class: "field", maxlength: "10", placeholder:"10文字以内で入力してください" %>
+            </div>
+          </div>
+          <div class="formField">
+            <div class='formField__lavel--normal'>
+              <%= f.label :フリガナ %>
+            </div>
+            <div class='formField__input--normal'>
+              <%= f.text_field :phonetic, autofocus: true, class: "field", maxlength: "10", placeholder:"10文字以内で入力してください" %>
+            </div>
+          </div>
+          <div class="formField">
+            <div class='formField__lavel--normal'>
+              <%= f.label :email, "E-mail" %>
+            </div>
+            <div class='formField__input--normal'>
+              <%= f.email_field :email, class: "field", autofocus: true, autocomplete: "email", placeholder:"PC・携帯どちらでも可" %>
+            </div>
+          </div>
+          <div class="formField">
+            <div class='formField__lavel--normal'>
+              <%= f.label :TEL %>
+            </div>
+            <div class='formField__input--normal'>
+              <%= f.telephone_field :tel, autofocus: true, class: "field", maxlength: "11", placeholder:"ハイフンなしで記載ください" %>
+            </div>
+          </div>
+          <div class="formField">
+            <div class='formField__lavel--normal'>
+              <%= f.label :現住所 %>
+            </div>
+            <div class='formField__input--normal'>
+              <%= f.text_field :currentAdress, autofocus: true, class: "field", maxlength: "10", placeholder:"アパート・マンション名まで記載ください" %>
+            </div>
+          </div>
+          <div class="formField">
+            <div class='formField__lavel--normal'>
+              <%= f.label :履歴書 %>
+            </div>
+            <div class='formField__input--normal'>
+              <%= f.file_field :resume, class: 'field', placeholder: "履歴書を添付してください" %>
+            </div>
+          </div>
+          <div class="actions">
+            <%= f.submit "応募する", class: 'next_btn'%>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
