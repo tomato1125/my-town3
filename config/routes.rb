@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   resources :newposts, only: [:index, :show]
 
-  resources :recruitments, only: [:index, :new, :create, :edit, :update, :show] do
+  resources :recruitments, shallow: true do
     resources :subscriptions, only: [:new, :create, :edit, :update, :show]
   end
 
