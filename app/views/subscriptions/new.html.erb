@@ -40,49 +40,37 @@
       <div class="accountPageBoxForm">
         <%= form_with(model: [@recruitment, @subscription], url: recruitment_subscriptions_path, local: true, class:"subscriptionForm") do |f| %>
           <div class="formField">
-            <div class='formField__lavel--normal'>
-              <%= f.label :name %>
-            </div>
+            <label class="formField__lavel--normal" for="name">name：</label>
             <div class='formField__input--normal'>
               <%= f.text_field :name, autofocus: true, class: "field", maxlength: "10", placeholder:"10文字以内で入力してください" %>
             </div>
           </div>
           <div class="formField">
-            <div class='formField__lavel--normal'>
-              <%= f.label :フリガナ %>
-            </div>
+            <label class="formField__lavel--normal" for="phonetic">フリガナ：</label>
             <div class='formField__input--normal'>
               <%= f.text_field :phonetic, autofocus: true, class: "field", maxlength: "10", placeholder:"10文字以内で入力してください" %>
             </div>
           </div>
           <div class="formField">
-            <div class='formField__lavel--normal'>
-              <%= f.label :email, "E-mail" %>
-            </div>
+            <label class="formField__lavel--normal" for="email">E-mail：</label>
             <div class='formField__input--normal'>
               <%= f.email_field :email, class: "field", autofocus: true, autocomplete: "email", placeholder:"PC・携帯どちらでも可" %>
             </div>
           </div>
           <div class="formField">
-            <div class='formField__lavel--normal'>
-              <%= f.label :TEL %>
-            </div>
+            <label class="formField__lavel--normal" for="tel">TEL：</label>
             <div class='formField__input--normal'>
               <%= f.telephone_field :tel, autofocus: true, class: "field", maxlength: "11", placeholder:"ハイフンなしで記載ください" %>
             </div>
           </div>
           <div class="formField">
-            <div class='formField__lavel--normal'>
-              <%= f.label :現住所 %>
-            </div>
+            <label class="formField__lavel--normal" for="currentAdress">現住所：</label>
             <div class='formField__input--normal'>
-              <%= f.text_field :currentAdress, autofocus: true, class: "field", maxlength: "10", placeholder:"アパート・マンション名まで記載ください" %>
+              <%= f.text_field :currentAdress, autofocus: true, class: "field", placeholder:"アパート・マンション名まで記載ください" %>
             </div>
           </div>
           <div class="formField">
-            <div class='formField__lavel--normal'>
-              <%= f.label :履歴書 %>
-            </div>
+            <label class="formField__lavel--normal" for="resume">履歴書を添付（任意）：</label>
             <div class='formField__input--normal'>
               <%= f.file_field :resume, class: 'field', placeholder: "履歴書を添付してください" %>
             </div>
