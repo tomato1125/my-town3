@@ -14,7 +14,7 @@ class SubscriptionsController < ApplicationController
 
   private
   def subscription_params
-    params.require(:subscription).permit(:name, :phonetic, :email, :tel, :currentAdress, :resume).merge(employee_id: current_user.id, recruitment_id: @recruitment.id)
+    params.require(:subscription).permit(:name, :phonetic, :email, :tel, :currentAdress, :resume).merge(employee_id: current_user.id)
     # params.require(:recruitment).permit(:recruitment_id)
   end
 
