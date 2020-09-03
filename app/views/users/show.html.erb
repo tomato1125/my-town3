@@ -22,16 +22,8 @@
     </div>
     <div class="userPostIndex">
       <% @posts.first(5).each do |post| %>
-        <div class='NewPost'>
+        <div class='userNewPost'>
           <div class='UserInfomation'>
-            <div class='UserInfomation__userImage'>
-              <i class="fas fa-user-circle"></i>
-            </div>
-            <span class='UserInfomation__username'>
-              <a href="/users/<%= post.user.id %>">
-                <%= post.user.name %>
-              </a>
-            </span>
             <div class='UserInfomation__date'>
               <i class="far fa-clock"></i>
               <span><%= time_ago_in_words(post.created_at) %>前</span>
