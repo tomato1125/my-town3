@@ -88,7 +88,12 @@
     }
   }
 }
-
+.userPostIndex {
+  display: flex;
+  justify-content: center;
+  background-color: #222222;
+  margin: 0 20vw;
+}
 .mypage-NewPost {
   height: 50vh;
   width: 30vw;
