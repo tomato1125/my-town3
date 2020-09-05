@@ -26,8 +26,6 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    // width: 700px;
-    // background-color: #222222;
     h2{
       justify-content: center;;
       font-size: 22px;
@@ -91,15 +89,26 @@
   }
 }
 
-.userNewPost {
+.mypage-NewPost {
   height: 50vh;
   width: 30vw;
-  padding: 50px 50px;
+  padding: 20px 20px;
   display: flex;
   flex-direction: column;
   border: 1px solid #4682B4;
   border-radius: 10px;
   margin: 50px;
+  .ReviewBox {
+    height: 30px;
+    width: 200px;
+    margin-top: 7px;
+    display: flex;
+    justify-content: space-around;
+    &__LikeIcon {
+      color: #ffffff;
+      font-size: 20px;
+    }
+  }
 }
 
 .UserInfomation {
@@ -139,10 +148,10 @@
   background-color: #222222;
   color: #ffffff;
 }
-.PostImage {
+.userPostImage {
   border: 1px solid #000000;
   margin-top: 10px;
-  height: 40%;
+  height: 100%;
   width: 100%;
   color: #ffffff;
   border-radius: 20px;
@@ -173,26 +182,4 @@
 .AreaName {
   font-size: 15px;
   margin-left: 6px;
-}
-.PostDescription {
-  height: 70px;
-  width: 600px;
-  border: 1px solid #000000;
-  margin-top: 5px;
-}
-.ReviewBox {
-  height: 30px;
-  width: 200px;
-  margin-top: 7px;
-  display: flex;
-  justify-content: space-around;
-  &__LikeIcon {
-    color: #ffffff;
-    font-size: 20px;
-  }
-  &__NumberOfView {
-    color: #ffffff;
-    font-size: 20px;
-    margin-left: 20px;
-  }
 }
