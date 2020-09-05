@@ -20,79 +20,26 @@
 .myPageMain{
   // display: flex;
   justify-content: center;
-  align-items: center;
+  height: 100vh;
   .myPageBox{
+    margin-top: 30vh;
     display: flex;
     justify-content: center;
-    align-items: center;
     flex-direction: column;
-    h2{
-      justify-content: center;;
-      font-size: 22px;
-    }
     .myPageBoxForm {
       display: flex;
+      align-items: center;
       justify-content: center;
-      .formField{
-        margin: 24px;
-        .formField__lavel{
-          display: flex;
-          .formField__lavel--normal{
-            font-weight: 600;
-          }
-          span{
-            margin-left: 8px;
-            padding: 2px 4px;
-            background-color: #3CCACE;
-            font-size: 12px;
-            color: #fff;
-            border-radius: 4px;
-          }
-        }
-        .formField__input--normal{
-          margin-top: 8px;
-          .field{
-            color: #000000;
-            height: 48px;
-            width: 343px;
-            font-size: 16px;
-            padding: 10px 16px 8px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-          }
-        }
-      }
-      .actions{
-        display: flex;
-        justify-content: center;
-        .next_btn{
-          margin-bottom: 24px;
-          background-color: #1E90FF;
-          border: 1px solid #1E90FF;
-          font-size: 20px;
-          color: #fff;
-          height: 48px;
-          width: 343px;
-          border-radius: 4px;
-        }
-      }
-      a{
-        font-size: 20px;
-        color: #ffffff;
-        text-decoration: none;
-        margin-bottom: 24px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
     }
   }
 }
 .userPostIndex {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   background-color: #222222;
-  margin: 0 20vw;
+  margin: 50px 200px 0px 200px;
 }
 .mypage-NewPost {
   height: 50vh;
