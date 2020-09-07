@@ -40,6 +40,9 @@
                 <%= post.prefecture.name if post.prefecture_id? %>
               </div>
             </div>
+            <div class="favorite">
+              <i class="far fa-bookmark"></i>
+            </div>
           </div>
           <%= link_to '詳細', post_path(post.id), method: :get %>
           <% if user_signed_in? && current_user.id == post.user_id %>
