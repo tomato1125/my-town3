@@ -43,7 +43,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #222222;
+  background-color: rgba($color: #222222, $alpha: 0.80);
   margin: 50px 200px 0px 200px;
 }
 .mypage-NewPost {
@@ -53,18 +53,13 @@
   display: flex;
   flex-direction: column;
   border: 1px solid #4682B4;
+  background-color: rgba($color: #222222, $alpha: 0.90);
   border-radius: 10px;
   margin: 50px;
-  .ReviewBox {
-    height: 30px;
-    width: 200px;
-    margin-top: 7px;
-    display: flex;
-    justify-content: space-around;
-    &__LikeIcon {
-      color: #ffffff;
-      font-size: 20px;
-    }
+  .postTime {
+    color: #4682B4;
+    font-size: 15px;
+    margin-left: 1.5vw;
   }
 }
 
@@ -102,7 +97,8 @@
 .PostTitle {
   width: auto;
   font-size: 20px;
-  background-color: #222222;
+  // background-color: #222222;
+  background-color: rgba($color: #222222, $alpha: 0.80);
   color: #ffffff;
 }
 .userPostImage {
