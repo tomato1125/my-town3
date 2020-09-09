@@ -21,7 +21,6 @@
         <% if user_signed_in? %>
           <div class="user_nav_logout">
             ログイン名: <span><%= current_user.name %></span>
-            <%= link_to "my page", current_user %>
             <%= link_to "マイページ", "/users/#{current_user.id}" %>
             <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
             <%= link_to  "投稿する", new_post_path, class: "post" %>

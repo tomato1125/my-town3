@@ -64,6 +64,7 @@
         <span>~ <%= post.title %> ~</span>
       </div>
       <div class='PostImage' style="background-image: url(<%= post.image %>);">
+      <%= link_to '', post_path(post.id), method: :get %>
         <div class="AreaInfomation">
           <div class="UserIcon">
             <i class="fas fa-map-marker-alt"></i>
@@ -72,27 +73,12 @@
             <%= post.prefecture.name if post.prefecture_id? %>
           </div>
         </div>
-        <div class="more">
-          <span><%= image_tag 'arrow_top.png' %></span>
-          <ul class="more_list">
-            <li>
-              <%= link_to '詳細', post_path(post.id), method: :get %>
-            </li>
-            <% if user_signed_in? && current_user.id == post.user_id %>
-              <li>
-                <%= link_to '編集', edit_post_path(post.id), method: :get %>
-              </li>
-            <% end %>
-          </ul>
+        <div class="indexFavorite">
+          <i class="far fa-bookmark"></i>
         </div>
       </div>
-      <div class='ReviewBox'>
-        <div class='ReviewBox__LikeIcon'>
-          <i class="fas fa-thumbs-up"></i>
-        </div>
-        <div class='ReviewBox__NumberOfView'>
-          <i class="fas fa-eye"></i>
-        </div>
+      <div class='ReviewBox__LikeIcon'>
+        <i class="fas fa-thumbs-up"></i>
       </div>
     </div>
   <% end %>
