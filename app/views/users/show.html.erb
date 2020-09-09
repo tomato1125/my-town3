@@ -28,6 +28,7 @@
             <span class="postTime"><%= time_ago_in_words(post.created_at) %>前</span>
           </div>
           <div class='userPostImage' style="background-image: url(<%= post.image %>);">
+
             <div class="AreaInfomation">
               <div class="UserIcon">
                 <i class="fas fa-map-marker-alt"></i>
@@ -40,10 +41,7 @@
               <i class="far fa-bookmark"></i>
             </div>
           </div>
-          <%= link_to '詳細', post_path(post.id), method: :get %>
-          <% if user_signed_in? && current_user.id == post.user_id %>
-            <%= link_to '編集', edit_post_path(post.id), method: :get %>
-          <% end %>
+          <%= link_to '', post_path(post.id), method: :get %>
         </div>
       <% end %>
     </div>

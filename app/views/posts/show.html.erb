@@ -20,6 +20,9 @@
               <%= link_to '編集', edit_post_path(@post.id), method: :get %>
             </li>
           </ul>
+          <% if user_signed_in? && current_user.id == @post.user_id %>
+            <%= link_to '編集', edit_post_path(@post.id), method: :get %>
+          <% end %>
         </div>
       <% end %>
     </div>
