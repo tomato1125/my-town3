@@ -24,6 +24,7 @@
         <div class='mypage-NewPost'>
           <div class="PostTitle">
             <span>~ <%= post.title %> ~</span>
+            <i class="far fa-clock"></i>
             <span class="postTime"><%= time_ago_in_words(post.created_at) %>前</span>
           </div>
           <div class='userPostImage' style="background-image: url(<%= post.image %>);">
