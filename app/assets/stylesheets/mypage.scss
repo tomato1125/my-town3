@@ -37,6 +37,16 @@
       
     }
   }
+  .user-nav-bar {
+    display: flex;
+    justify-content: space-around;
+    width: 20vw;
+    margin: 0px 200px 0px 230px;
+    background-color: rgba($color: #222222, $alpha: 0.80);
+    li {
+      font-size: 2vh;
+    }
+  }
 }
 .userPostIndex {
   display: flex;
@@ -44,7 +54,7 @@
   justify-content: center;
   align-items: center;
   background-color: rgba($color: #222222, $alpha: 0.80);
-  margin: 50px 200px 0px 200px;
+  margin: 0px 200px 0px 200px;
 }
 .mypage-NewPost {
   height: 50vh;
