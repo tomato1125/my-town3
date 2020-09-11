@@ -19,6 +19,17 @@
         投稿数 <%= @posts.length %>
       </div>
     </div>
+    <ul class='user-nav-bar'>
+      <li class='user-nav first-nav'>
+        TOP
+      </li>
+      <li class='user-nav'>
+        POST
+      </li>
+      <li class='user-nav'>
+        Favorite
+      </li>
+    </ul>
     <div class="userPostIndex">
       <% @posts.first(5).each do |post| %>
         <div class='mypage-NewPost'>
