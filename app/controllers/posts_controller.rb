@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :move_to_index, except: [:index, :show, :search]
+  # before_action :move_to_index, except: [:index, :show, :search]
 
   def index
     @posts = Post.includes(:user).order("created_at DESC")
@@ -37,8 +37,8 @@ class PostsController < ApplicationController
     params.require(:post).permit(:title, :image, :content, :prefecture_id, :category_id, :address, :latitude, :longtitude, :maptitle).merge(user_id: current_user.id)
   end
 
-  def move_to_index
-    redirect_to action: :index unless user_signed_in?
-  end
+  # def move_to_index
+  #   redirect_to action: :index unless user_signed_in?
+  # end
 
 end

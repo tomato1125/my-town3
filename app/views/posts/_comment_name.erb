@@ -1,0 +1,9 @@
+<div class="comment_user_name">
+  <%= comment.user.name %> 
+  <% if comment.user == comment.post.user %>
+    <div class="commenter_display">
+      投稿者
+    </div>
+  <% end %>
+</div>
+

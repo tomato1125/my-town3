@@ -76,6 +76,160 @@
   }
 }
 
+.commentBox {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.commentlist {
+  padding: 0 20px;
+}
+.new_comment {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.comment_Me.comment_one_block {
+  display: flex;
+  margin-top: 50px;
+  justify-content: flex-end;
+  align-items: center;
+  .comment_content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    line-height: 30px;
+    padding: 0 20px;
+    margin-right: 20px;
+    position: relative;
+    display: inline-block;
+    padding: 0 15px;
+    width: 100%;
+    line-height: 40px;
+    background: #FDF5E6;
+    border-radius: 10px;
+    z-index: 0;
+  }
+    .comment_content:before {
+      border-style: solid;
+      border-width: 10px 0 10px 10px;
+      border-color: transparent transparent transparent #FDF5E6;
+      content: "";
+      position: absolute;
+      top: 50%; right: -8px;
+      margin-top: -9px;
+      display: block;
+      width: 0px;
+      height: 0px;
+      z-index: 0;
+    }
+    .comment_content:after {
+      border-width: 11px 0 11px 11px;
+      position: absolute;
+      top: 50%; right: -12px;
+      margin-top: -10px;
+      display: block;
+      width: 0px;
+      height: 0px;
+      z-index: -1;
+    }
+    .comment_create_at {
+      margin-top: 30px;
+      position: absolute;
+      bottom: -2px;
+      right: 10px;
+      font-size: 5px;
+      color: 	#888888;
+    }
+    .comment_restore {
+
+    }
+  .comment_user_name {
+    color: #000000;
+    font-weight: bold;
+    .seller_display {
+      border-radius: 5px;
+      border: 1px solid;
+      background-color: #3ccace;
+      color: #FFFFFF;
+      font-weight: bold;
+      text-align: center;
+    }
+  }
+}
+
+.comment_Other.comment_one_block {
+  display: flex;
+  margin-top: 50px;
+  align-items: center;
+  .comment_user_name {
+
+  }
+
+  .comment_content_other {
+    margin-left: 20px;
+    position: relative;
+    display: inline-block;
+    padding: 0 15px;
+    width: 100%;
+    line-height: 40px;
+    background: #EEEEEE;
+    border-radius: 10px;
+    z-index: 0;
+  }
+  .comment_create_at {
+    margin-top: 30px;
+    position: absolute;
+    bottom: -2px;
+    right: 10px;
+    font-size: 5px;
+    color: 	#888888;
+  }
+  .comment_content_other:before {
+    border-style: solid;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #EEEEEE transparent transparent;
+    content: "";
+    position: absolute;
+    top: 50%; left: -8px;
+    margin-top: -9px;
+    display: block;
+    width: 0px;
+    height: 0px;
+    z-index: 0;
+  }
+  .comment_content_other:after {
+    border-width: 11px 12px 11px 0;
+    position: absolute;
+    top: 50%; left: -12px;
+    margin-top: -10px;
+    display: block;
+    width: 0px;
+    height: 0px;
+    z-index: -1;
+  }
+  .comment_create_at {
+    margin-top: 20px;
+    font-size: 5px;
+    color: 	#888888;
+  }
+}
+
+.comment_user_name {
+  color: #000000;
+  font-weight: bold;
+  .seller_display {
+    border-radius: 5px;
+    border: 1px solid;
+    background-color: #3ccace;
+    color: #FFFFFF;
+    font-weight: bold;
+    text-align: center;
+  }
+}
+
 div.PostShow div.PostImage {
   margin: 20px 0;
   padding: 30px;
@@ -174,26 +328,4 @@ div.PostIndex div.PostImage p {
   .maptitleName {
     font-size: 20px;
   }
-}
-
-.commentSpace {
-  padding: 20px 20px;
-  display: flex;
-  justify-content: center;
-  .new_comment {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .contentbox {
-    width: 100%;
-  }
-  .form__submit {
-    border-radius: 5px;
-  }
-}
-
-.comments {
-  display: flex;
-  justify-content: center;
 }
