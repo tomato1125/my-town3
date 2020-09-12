@@ -42,24 +42,67 @@
     <%= render 'showmap', post: @post %>
   </div>
 </div>
-<div class="commentSpace">
-  <% if current_user %>
-    <%= form_with(model: [@post, @comment], local: true, id: "new_comment") do |form| %>
-      <%= form.text_area :content, placeholder: "コメントする", rows: "3", class: "contentbox"%>
-      <%= form.submit "SEND", class: "form__submit" %>
+
+<div class="commentBox">
+  コメント欄
+  <div class="commentList">
+    <% if user_signed_in? %>
+      <% @comments.each do |comment| %>
+        <% if comment.user_id == current_user.id %>
+          <div class="comment_Me.comment_one_block" data-index=<%= comment.id %>>
+            <% if comment.delete_check == 1 %>
+              <div class="comment_content">
+                <%= render 'posts/comment_delete_restore_btn', comment: comment %>
+              </div>
+            <% else %> 
+              <div class="comment_content">
+                <%= comment.content %>
+                <div class="comment_create_at">
+                  <%= comment.created_at.strftime("%Y年%m月%d日 %H時%M分") %>
+                </div>
+                <% if comment.post.user == current_user %>
+                  <div class="comment_delete me_pre_delete" data-index=<%= comment.id %>>
+                    <%= link_to '削除する', comment_path(comment.id) ,method: :patch %>
+                  </div>
+                <% end %>
+              </div>
+              <%= render 'posts/comment_name',comment: comment %>
+            <% end %>
+          </div>
+        <% else %>
+          <div class="comment_Me.comment_one_block" data-index=<%= comment.id %>>
+            <%= render 'posts/comment_name',comment: comment %>
+            <% if comment.delete_check == 1 %>
+              <div class="comment_content_other">
+                <%= render 'posts/comment_delete_restore_btn',comment: comment %>
+              </div>
+            <% else %>
+              <div class="comment_content_other">
+                <%= comment.comment %>
+                <div class="comment_create_at">
+                  <%= comment.created_at.strftime("%Y年%m月%d日 %H時%M分") %>
+                </div>
+                <% if comment.post.user == current_user %>
+                  <div class="comment_delete.other_pre_delete" data-index=<%= comment.id %>>
+                    <%= link_to '削除する', comment_path(comment.id) ,method: :patch %>
+                  </div>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      <% end %>
     <% end %>
-  <% else %>
-    <strong><p>*** コメント投稿は新規登録/ログインが必要です ***<p></strong>
-  <% end %>
-</div>
-<div class="comments">
-  <h3>【コメント一覧】</h3>
-  <% if @comments %>
-    <% @comments.each do |comment| %>
-      <p>
-        <strong><%= link_to comment.user.name, "/users/#{comment.user_id}" %>:</strong>
-        <%= comment.content %>
-      </p>
+  </div>
+  <% if user_signed_in? %>
+    <%= form_with(model: [@post, @comment], url: {:action => :create}, local: true, class:"new_comment") do |f| %>
+      <%= f.text_area :comments, id: "comment_body", class: "commentBox__inputArea", rows:2, wrap: "soft"%>
+      <%= f.hidden_field :post_id, value: @post.id %>
+      <div commentBox__inputArea--submit>
+        <%= f.button type: 'submit',class: "submitBtn" do %>
+          ボタン
+        <% end %>
+      </div>
     <% end %>
   <% end %>
 </div>
