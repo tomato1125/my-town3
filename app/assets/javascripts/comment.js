@@ -30,7 +30,7 @@ $(function(){
     var HTML_sellerMark =
         `
           <div class="commenter_display">
-          出品者
+          投稿者
           </div>
         `
     // とじタグ
