@@ -17,10 +17,12 @@ class CommentsController < ApplicationController
 
   def update
     @comment.update(delete_check:1)
+    redirect_to post_path(@comment.post.id)
   end
 
   def destroy
     @comment.destroy
+    # redirect_to post_path(@comment.post.id)
   end
 
   def restore
@@ -28,17 +30,17 @@ class CommentsController < ApplicationController
     @user_of_post = User.find(@comment.post.user_id)
     respond_to do |format|
     format.json
+    # redirect_to post_path(@comment.post.id)
   end
 end
 
 private
   def comment_params
-    params.require(:comment).permit(:comments).merge(user_id: current_user.id)
+    params.require(:comment).permit(:comments, :post_id).merge(user_id: current_user.id)
   end
 
   def set_comment
     @comment = Comment.find(params[:id])
-    @post = Post.find(params[:id])
   end
 
   def check_user

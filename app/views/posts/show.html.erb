@@ -56,7 +56,7 @@
               </div>
             <% else %> 
               <div class="comment_content">
-                <%= comment.content %>
+                <%= comment.comments %>
                 <div class="comment_create_at">
                   <%= comment.created_at.strftime("%Y年%m月%d日 %H時%M分") %>
                 </div>
@@ -78,7 +78,7 @@
               </div>
             <% else %>
               <div class="comment_content_other">
-                <%= comment.comment %>
+                <%= comment.comments %>
                 <div class="comment_create_at">
                   <%= comment.created_at.strftime("%Y年%m月%d日 %H時%M分") %>
                 </div>
@@ -95,7 +95,7 @@
     <% end %>
   </div>
   <% if user_signed_in? %>
-    <%= form_with(model: [@post, @comment], url: {:action => :create}, local: true, class:"new_comment") do |f| %>
+    <%= form_with(model: @comment, local: true, class:"new_comment") do |f| %>
       <%= f.text_area :comments, id: "comment_body", class: "commentBox__inputArea", rows:2, wrap: "soft"%>
       <%= f.hidden_field :post_id, value: @post.id %>
       <div commentBox__inputArea--submit>

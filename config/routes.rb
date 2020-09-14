@@ -2,11 +2,6 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'posts#index'
   resources :posts, only: [:index, :new, :create, :edit, :update, :show] do
-    resources :comments, only:[:create,:update,:destroy] do
-      member do
-        get 'restore'
-      end
-    end
     collection do
       get 'search'
     end
@@ -21,6 +16,12 @@ Rails.application.routes.draw do
 
   resources :recruitments, shallow: true do
     resources :subscriptions, only: [:new, :create, :edit, :update, :show]
+  end
+
+  resources :comments, only:[:create,:update,:destroy] do
+    member do
+      get 'restore'
+    end
   end
 
 end
