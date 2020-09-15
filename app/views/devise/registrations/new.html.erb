@@ -15,6 +15,14 @@
           </div>
           <div class="formField">
             <div class='formField__lavel--normal'>
+              <%= f.label :image %>
+            </div>
+            <div class='formField__input--normal'>
+              <%= f.file_field :image, class: "field", placeholder: "イメージを選択してください"%>
+            </div>
+          </div>
+          <div class="formField">
+            <div class='formField__lavel--normal'>
               <%= f.label :email, "E-mail" %>
             </div>
             <div class='formField__input--normal'>
@@ -38,6 +46,22 @@
             </div>
             <div class='formField__input--normal'>
               <%= f.password_field :password_confirmation, class: "field", autocomplete: "new-password", placeholder:"6文字以上で入力してください" %>
+            </div>
+          </div>
+          <div class="formField">
+            <div class='formField__lavel--normal'>
+              <%= f.label :prefecture %>
+            </div>
+            <div class='formField__input--normal'>
+              <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name, {include_blank: '出身地を選択してください'}, {class: "field"} %>
+            </div>
+          </div>
+          <div class="formField">
+            <div class='formField__lavel--normal'>
+              <%= f.label :introduce %>
+            </div>
+            <div class='formField__input--normal'>
+              <%= f.text_field :introduce, autofocus: true, class: "field", placeholder:"紹介文で入力してください" %>
             </div>
           </div>
           <div class="actions">
