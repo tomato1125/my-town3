@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_13_023041) do
+ActiveRecord::Schema.define(version: 2020_09_15_033100) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -139,7 +139,11 @@ ActiveRecord::Schema.define(version: 2020_09_13_023041) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "name"
+    t.text "image"
+    t.text "introduce"
+    t.bigint "prefecture_id", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["prefecture_id"], name: "index_users_on_prefecture_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
@@ -167,6 +171,7 @@ ActiveRecord::Schema.define(version: 2020_09_13_023041) do
   add_foreign_key "recruitments", "users", column: "employer_id"
   add_foreign_key "subscriptions", "recruitments"
   add_foreign_key "subscriptions", "users", column: "employee_id"
+  add_foreign_key "users", "prefectures"
   add_foreign_key "users_prefectures", "prefectures"
   add_foreign_key "users_prefectures", "users"
 end
