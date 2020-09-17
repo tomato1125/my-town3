@@ -8,5 +8,6 @@ class UsersController < ApplicationController
     user = User.find(params[:id])
     @name = user.name
     @posts = user.posts
+    @image = user.image
   end
 end
