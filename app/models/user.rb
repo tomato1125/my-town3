@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :posts
-  has_many :prefectures
+  belongs_to :prefecture
   has_many :comments
   has_many :subscriptions
   # has_many :recruitments, through: :subscriptions, foreign_key: "empolyee_id"
