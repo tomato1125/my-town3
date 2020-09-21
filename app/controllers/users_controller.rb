@@ -9,5 +9,7 @@ class UsersController < ApplicationController
     @name = user.name
     @posts = user.posts
     @image = user.image
+    @introduce = user.introduce
+    @prefecture = user.prefecture_id
   end
 end

@@ -31,6 +31,26 @@
         Favorite
       </li>
     </ul>
+    <div class="top-page">
+      <div class="top-page__introduce">
+        <%= @introduce %>
+      </div>
+      <div class="top-page__status">
+        <div class="from">
+          出身地 <%= @prefecure.name %>
+        <div class="followView__follow">○○フォロー
+        </div>
+        <div class="followView__follow">○○フォロワー
+        </div>
+        <div class="postcount">
+          投稿数 <%= @posts.length %>
+        </div>
+        <%= link_to 'お気に入りの登録', '#', method: :get %>
+        <span class="favorite-post">
+          <%= @posts.length %>
+        </span>
+      <div>
+    <div>
     <div class="userPostIndex">
       <% @posts.first(5).each do |post| %>
         <div class='mypage-NewPost'>
