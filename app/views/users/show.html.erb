@@ -66,6 +66,9 @@
             </div>
           <% else %>
             <div class="userPostIndex">
+              <div class="userPostIndex__postCount">
+                投稿数:  <%= @posts.length %> 件
+              </div>
               <% @posts.first(5).each do |post| %>
                 <div class='mypage-NewPost'>
                   <div class="PostTitle">
