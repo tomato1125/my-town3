@@ -12,4 +12,6 @@ class User < ApplicationRecord
 
   # has_many :categories
   # has_many :categories, through :users_categories
+
+  mount_uploader :image, ImageUploader
 end

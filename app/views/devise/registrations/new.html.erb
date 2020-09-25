@@ -3,7 +3,7 @@
     <div class="accountPageBox">
       <h2>新規登録</h2>
       <div class="accountPageBoxForm">
-        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)), local: true do |f| %>
           <%= render "devise/shared/error_messages", resource: resource %>
           <div class="formField">
             <div class='formField__lavel--normal'>
@@ -18,7 +18,7 @@
               <%= f.label :image %>
             </div>
             <div class='formField__input--normal'>
-              <%= f.file_field :image, class: "field", placeholder: "イメージを選択してください"%>
+              <%= f.file_field :image, multipart: true, class: "field", placeholder: "イメージを選択してください"%>
             </div>
           </div>
           <div class="formField">
