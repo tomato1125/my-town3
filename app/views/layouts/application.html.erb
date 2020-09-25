@@ -16,15 +16,14 @@
   <body>
     <header class="header">
       <div class="header__ber">
-        <%# <p><img src="MyTownLogo.jpg" width="400" height="50" alt="ロゴを表示" class='logo'></p> %>
-        <h1 class="grid-6"><a href="/">My town</a></h1>
+        <%= image_tag "myTown4.jpg", alt: "app-store", class: "logo" %>
         <% if user_signed_in? %>
-          <div class="user_nav_logout">
+          <div class="user_nav_menu">
             ログイン名: <span><%= current_user.name %></span>
-            <%= link_to "マイページ", "/users/#{current_user.id}" %>
-            <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-            <%= link_to  "投稿する", new_post_path, class: "post" %>
-            <%= link_to  "求人情報一覧", recruitments_path, class: "post" %>
+            <%= link_to "マイページ", "/users/#{current_user.id}", class:"link" %>
+            <%= link_to "ログアウト", destroy_user_session_path, class:"link", method: :delete %>
+            <%= link_to  "投稿する", new_post_path, class: "link" %>
+            <%= link_to  "求人情報一覧", recruitments_path, class: "link" %>
           </div>
         <% else %>
           <div class="user_nav_login">

@@ -71,26 +71,33 @@
 }
 
 .logo {
-  height: 500px;
-  width: 500px;
+  height: 8.8vh;
+  width: auto;
+  background-color: rgba($color: #222222, $alpha: 0.95);
 }
 .grid-6 {
   font-size: 30px;
   margin-right: 20px;
 }
 
-.user_nav_logout {
-  font-size: 20px;
-  margin-left: 15px;
+.user_nav_menu {
+  font-size: 2vh;
+  margin-left: 2vw;
+  span {
+    margin-right: 3vw;
+  }
+  .link {
+    margin-right: 2vw;
+  }
 }
 
 .user_nav_login {
-  font-size: 20px;
+  font-size: 2vh;
 }
 
 .icon {
-  color: #4682B4;
-  font-size: 25px;
+  color: #ffffff;
+  font-size: 3vh;
 }
 
 .slick-dots {
