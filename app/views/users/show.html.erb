@@ -35,29 +35,36 @@
         <li class="page show">
           <div class="top-page">
             <div class="top-page__introduce">
-              <%= @introduce %>
+              <span class="top-page-title">
+                introduce
+              </span>
+              <div class="top-page__introduce__sentence">
+                <%= @introduce %>
+              </div>
             </div>
             <div class="top-page__status">
               <span class="top-page-title">
                 status
               </span>
-              <ul class="top-page__status__contents">
-                <li class="top-page__status__contents__content">
-                  出身地： <%= @prefecture %>
-                </li>
-                <li class="top-page__status__contents__content">
-                  ○○フォロー
-                </li>
-                <li class="top-page__status__contents__content">
-                  ○○フォロワー
-                </li>
-                <li class="top-page__status__contents__content">
-                  投稿数:  <%= @posts.length %> 件
-                </li>
-                <li class="top-page__status__contents__content">
-                  お気に入りの投稿: <%= @posts.length %> 件
-                </li>
-              </ul>
+              <div class="top-page__status__sentence">
+                <ul class="top-page__status__sentence__contents">
+                  <li class="top-page__status__sentence__contents__content">
+                    出身地： <%= @prefecture %>
+                  </li>
+                  <li class="top-page__status__sentence__contents__content">
+                    ○○フォロー
+                  </li>
+                  <li class="top-page__status__sentence__contents__content">
+                    ○○フォロワー
+                  </li>
+                  <li class="top-page__status__sentence__contents__content">
+                    投稿数:  <%= @posts.length %> 件
+                  </li>
+                  <li class="top-page__status__sentence__contents__content">
+                    お気に入り投稿: <%= @posts.length %> 件
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </li>
