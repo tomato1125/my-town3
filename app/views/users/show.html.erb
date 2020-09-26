@@ -2,12 +2,12 @@
   <div class="myPageMain">
     <div class="myPageBox">
       <div class="myPageBoxForm">
-        <div class='UserInformation'>
-          <div class="UserInformation__userImage">
-            <%= image_tag @user.image.url if @user.image.present? %>
+        <div class='myPageBoxInformation'>
+          <div class="myPageBoxInformation-Image">
+            <%= image_tag @user.image.url, class: "image" %>
           </div>
           <%# <i class="fas fa-user"></i> %>
-          <span class='UserInformation__userName'>
+          <span class='myPageBoxInformation-Name'>
             <%= @name %> さんのマイページ
           </span>
         </div>

@@ -25,7 +25,6 @@
   height: 100vh;
   .myPageBox{
     margin-top: 30vh;
-    height: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,20 +37,20 @@
     }
   }
 }
-.userInfomation {
-  height: 200px;
-  width: 200px;
+.myPageBoxInformation {
   display: flex;
   justify-content: center;
-  &__userImage {
-    height: 100%;
-    width: 100%;
-    &__image {
-      height: 100px;
-      width: 100px;
+  align-items: center;
+  flex-direction: column;
+  .myPageBoxInformation-Image {
+    height: 10vh;
+    width: auto;
+    .image {
+      height: 10vh;
+      width: auto;
     }
   }
-  &__userName {
+  .myPageBoxInformation-Name {
     font-size: 2vh;
     color: #fff;
   }
@@ -62,22 +61,23 @@
   width: 20vw;
   margin:0 0 0 5vw;
   a{
-    text-decoration: none;
-    color: #1E90FF;
+    // text-decoration: none;
+    color: rgba($color: #ffffff, $alpha: 0.30);
   }
   li {
-    background-color: rgba($color: #222222, $alpha: 0.80);
+    background-color: rgba($color: #222222, $alpha: 0.40);
     padding: 15px;
     font-size: 2vh;
   }
 }
 
 ul.user-nav-bar li .active {
-  background-color: #1E90FF;
+  // background-color: #1E90FF;
   color: #ffffff;
+  text-decoration: none;
 }
 .page {
-  background-color: rgba($color: #222222, $alpha: 0.80);
+  background-color: rgba($color: #222222, $alpha: 0.40);
   height: auto;
   margin: 0 auto;
   display: flex;
@@ -116,9 +116,6 @@ ul.user-nav-bar li .active {
       justify-content: center;
       padding: 2.5vh;
       font-size: 1.2vh;
-
-      &__content {
-      }
     }
   }
 }
