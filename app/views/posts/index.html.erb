@@ -47,9 +47,12 @@
   <% @posts.first(5).each do |post| %>
     <div class='NewPost'>
       <div class='UserInformation'>
-        <div class='UserInformation__userImage'>
-          <i class="fas fa-user-circle"></i>
+        <div class="myPageBoxInformation-Image">
+          <%= image_tag post.user.image.url, class: "image" %>
         </div>
+        <%# <div class='UserInformation__userImage'>
+          <i class="fas fa-user-circle"></i>
+        </div> %>
         <span class='UserInfomation__username'>
           <a href="/users/<%= post.user.id %>">
             <%= post.user.name %>
