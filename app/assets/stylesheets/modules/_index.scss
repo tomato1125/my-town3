@@ -163,35 +163,46 @@
   }
 }
 
-.UserInfomation {
+.indexUserInfomation {
   background-color: #222222;
-  height: 5vh;
+  height: auto;
   width: auto;
   display: flex;
   align-items: center;
+  text-align: center;
   a {
     color: #4682B4;
   }
-  &__userImage {
+  &__userAvater {
     height: 50px;
     width: auto;
     font-size: 40px;
     color: #ffffff;
     background-color: #222222;
-    text-align: center;
+    // text-align: center;
     display: inline-block;
+    .avater {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+    }
   }
   &__username {
     width: auto;
     font-size: 25px;
     color: #4682B4;
     margin-left: 5px;
+    display: inline-block;
+    a {
+      display: inline-block;
+    }
   }
   &__date {
     width: auto;
     font-size: 12px;
     color: #4682B4;
     margin-left: 20px;
+    display: inline-block;
   }
 }
 

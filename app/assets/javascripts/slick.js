@@ -2,7 +2,7 @@ $(function() {
   $('.PostIndex').slick({
     dots: true,
     accessibility: true,
-    autoplay: true,
+    // autoplay: true,
     centerMode: true,
     centerPadding: '30px',
     slidesToShow: 3,
