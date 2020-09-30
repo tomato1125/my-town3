@@ -6,16 +6,17 @@
 <div class="iPostIndex">
   <% @posts.each do |post| %>
     <div class='NewPost'>
-      <div class='UserInfomation'>
-        <div class='UserInfomation__userImage'>
-          <i class="fas fa-user-circle"></i>
+      <div class='indexUserInfomation'>
+        <div class='indexUserInfomation__userAvater'>
+          <%= image_tag post.user.image.url, class: "avater" %>
+          <%# <i class="fas fa-user-circle"></i> %>
         </div>
-        <span class='UserInfomation__username'>
+        <span class='indexUserInfomation__username'>
           <a href="/users/<%= post.user.id %>">
             <%= post.user.name %>
           </a>
         </span>
-        <div class='UserInfomation__date'>
+        <div class='indexUserInfomation__date'>
           <i class="far fa-clock"></i>
           <span><%= time_ago_in_words(post.created_at) %>前</span>
         </div>
