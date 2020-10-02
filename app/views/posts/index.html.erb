@@ -50,9 +50,6 @@
         <div class="indexUserInfomation__userAvater">
           <%= image_tag post.user.image.url, class: "avater" %>
         </div>
-        <%# <div class='UserInformation__userImage'>
-          <i class="fas fa-user-circle"></i>
-        </div> %>
         <div class='indexUserInfomation__username'>
           <a href="/users/<%= post.user.id %>">
             <%= post.user.name %>

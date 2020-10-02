@@ -10,7 +10,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    Post.create(post_params)
+    @post = Post.create(post_params)
   end
 
   def edit
